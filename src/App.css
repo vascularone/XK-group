@@ -1,38 +1,74 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin:0;
+  padding:0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.gliss {
+  position:relative;
+  left:11.5rem;
+  bottom:4rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.firstSection {
+  display:flex;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(133,181,203,1) 35%, rgba(133,181,203,1) 65%, rgba(255,255,255,1) 90%);
+  flex-direction:column;
+  height:100vh;
 }
-
-.App-link {
-  color: #61dafb;
+.shampoos {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding-top:4rem;
+  padding-left:13rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.allShampoos {
+  position:relative;
+  height:800px;
+  width:800px;
+  bottom:8rem;
+  right:3.5rem;
+}
+.shampooText {
+  position:relative;
+  bottom:5rem;
+  right:4rem;
+  font-size:30px;
+  font-weight:bold;
+  color:black;
+}
+.secondSection {
+  display:flex;
+  flex-direction:column;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(89,164,199,1) 35%, rgba(89,164,203,1) 65%, rgba(255,255,255,1) 90%);
+  height:100vh;
+}
+.conditioners {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding-left:13rem;
+  padding-top:20rem;
+  display:flex;
+  flex-direction:column;
+}
+.allConditioners {
+  position:relative;
+  height:700px;
+  width:700px;
+  right:1rem;
+}
+.conditionerText {
+  position:relative;
+  bottom:1.5rem;
+  left:13rem;
+  font-size:30px;
+  font-weight:bold;
+  color:black;
 }

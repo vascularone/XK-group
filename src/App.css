@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .App {
   text-align: center;
 }
@@ -5,70 +6,134 @@ body {
   margin:0;
   padding:0;
 }
-
-.gliss {
-  position:relative;
-  left:11.5rem;
-  bottom:4rem;
+ul {
+  list-style-type: square;
 }
-.firstSection {
-  display:flex;
-  background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(133,181,203,1) 35%, rgba(133,181,203,1) 65%, rgba(255,255,255,1) 90%);
-  flex-direction:column;
-  height:100vh;
+ul li {
+  width:40rem;
+}
+button {
+  position:relative;
+  border-radius:20px;
+  background:#232B2B;
+  font-size:20px;
+  cursor:pointer;
+  border:solid #232B2B;
+  width:10rem;
+  height:4rem;
+  color:#5D8AA8;
+  transition:all 0.5s;
+}
+.navbar {
+  background:#5D8AA8;
+  height:55vh;
+  display: flex;
+  flex-direction:row;
 }
 .shampoos {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  padding-top:4rem;
-  padding-left:13rem;
-}
-.allShampoos {
   position:relative;
-  height:800px;
-  width:800px;
+  left:35rem;
+  bottom:3rem;
+  height:30rem;
+  height:500px;
+  width:500px;
+}
+.navbar-text {
+  height:40rem;
+  position:relative;
+  display:flex;
+  flex-direction:row;
+  left:20rem;
+  width:25rem;
+  top:5rem;
+}
+.gliss {
+  position:relative;
+  width:300px;
+  height:300px;
+  margin: auto;
+  padding:auto;
+  right:5rem;
   bottom:8rem;
-  right:3.5rem;
 }
-.shampooText {
+.primaryText {
   position:relative;
+  margin:auto;
+  padding:auto;
+  bottom:12rem;
+  width:31rem;
+  right:5rem;
+  font-size:50px;
+  font-family:'Rubik', sans-serif;
+  font-weight:450;
+}
+.secondaryText {
+  position:relative;
+  margin:auto;
+  padding:auto;
+  font-family:'Rubik', sans-serif;
+  /* right:19rem; */
+  font-size:40px;
+  font-weight:400;
   bottom:5rem;
-  right:4rem;
-  font-size:30px;
-  font-weight:bold;
-  color:black;
 }
-.secondSection {
+.breaking-line{
+  padding-right:5px;
+  position:relative;
+  right:7rem;
+  height:23rem;
+  background:black;
+}
+.horizontal-line {
+  position:relative;
+  background:black;
+  height:5px;
+  width:80rem;
+  top:28rem;
+  right:24.5rem;
+}
+.firstSection, .secondSection, .thirdSection{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  height:90vh;
+  background: rgb(93,138,168);
+  background: linear-gradient(0deg, rgba(93,138,168,1) 0%, rgba(117,174,212,1) 35%, rgba(117,174,212,1) 65%, rgba(93,138,168,1) 100%);
+}
+
+.aquaShampoo, .aquaSpray{
+  position:relative;
+  top:13rem;
+  left:6rem;
+  height:500px;
+  width:500px;
+}
+.aquaConditioner{
+  width:500px;
+  height:500px;
+  position:relative;
+  right:7rem;
+  top:13rem;
+}
+.shampooDescription, .sprayDescription{
+  height:35rem;
+  position:relative;
   display:flex;
   flex-direction:column;
-  background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(89,164,199,1) 35%, rgba(89,164,203,1) 65%, rgba(255,255,255,1) 90%);
-  height:100vh;
+  width:50rem;
+  top:14rem;
+  right:20rem;
 }
-.conditioners {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  padding-left:13rem;
-  padding-top:20rem;
+.shampooDescription button , .conditionerDescription button, .sprayDescription button{
+  bottom:10rem;
+}
+.conditionerDescription {
+  height:35rem;
+  position:relative;
   display:flex;
   flex-direction:column;
+  width:50rem;
+  top:14rem;
+  left:20rem;
 }
-.allConditioners {
-  position:relative;
-  height:700px;
-  width:700px;
-  right:1rem;
-}
-.conditionerText {
-  position:relative;
-  bottom:1.5rem;
-  left:13rem;
-  font-size:30px;
-  font-weight:bold;
-  color:black;
-}
+

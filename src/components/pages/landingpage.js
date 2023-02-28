@@ -32,7 +32,7 @@ const Landing = () => {
             <section className="secondSection">
                 <div className="conditionerDescription">
                     <span className="secondaryText">
-                        <strong>Schwarzkopf Gliss Aqua Revive</strong> moisturizes and visibly improves the quality of your hair, without weighing it down!</span>
+                        <strong>The Aqua Revive</strong> product line was created to emphasize the beauty and answer all the needs of dry and normal hair.</span>
                     <button onClick={handleClick} className="aquaCheckout"><span>Buy now</span></button>
                 </div>
                 <img src="conditionerSplash2.png" alt="aqua not responding" className="aquaConditioner" />
@@ -42,7 +42,7 @@ const Landing = () => {
                 <img src="aquaSpray.png" alt="aqua not responding" className="aquaSpray" />
                 <div className="sprayDescription">
                     <span className="secondaryText">
-                        <strong>Schwarzkopf Gliss Aqua Revive</strong> moisturizes and visibly improves the quality of your hair, without weighing it down!</span>
+                        A rich yet light formula with a complex of <strong>hyaluronic acid</strong> and <strong>hyaluronic acid</strong> for a feeling of hydration and shine.</span>
                     <button onClick={handleClick} className="aquaCheckout"><span>Buy now</span></button>
                 </div>
             </section>

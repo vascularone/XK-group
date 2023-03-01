@@ -28,7 +28,7 @@ const Conditioner = () => {
 
             </header>
             <section className="conditionerDetails">
-                <span className="shampooTitle">Aqua Revive Conditioner</span>
+                <span className="shampooTitle conditionerTitle">Aqua Revive Conditioner</span>
                 <span className="shampooDescription2">Recommended for the body for delicate, sensitive and problematic skin - requiring high protection against intense sunlight, sunburn and harmful UVA / UVB radiation</span>
                 <ul>
                     <li className="shampooDescription3">Moisturization: up to 48 hours of moisturized hair feeling</li>

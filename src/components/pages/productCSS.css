@@ -13,17 +13,20 @@ section {
 .shampooDetails {
     background-image:url("/public/halfShampoo5.png");
     background-repeat:no-repeat;
+    animation:animate 800ms;
     background-position: bottom -14.5rem right 1rem;
 }
 .conditionerDetails {
     background-image:url("/public/halfConditioner.png");
     background-repeat:no-repeat;
     background-position: bottom -14.5rem right 1rem;
+    animation:animate 800ms;
 }
 .expressDetails {
     background-image:url("/public/halfExpress.png");
     background-repeat:no-repeat;
     background-position: bottom -14.5rem right 1rem;
+    animation:animate 800ms;
 }
 .shampooTitle {
     position:relative;
@@ -34,12 +37,14 @@ section {
     width:fit-content;
     color:white;
     -webkit-text-stroke: 3px rgb(50,94,124);
+    animation:moveButton 800ms;
 }
 .shampooDescription2 , .shampooDescription3{
     position:relative;
     left:15rem;
     font-family:'Rubik', sans-serif;
     color:black;
+    animation:moveButton 800ms;
 }
 .shampooDescription2 {
     width:40vw;
@@ -47,6 +52,7 @@ section {
     top:14rem;
     font-size:25px;
     font-weight:400;
+    
 }
 .shampooDescription3 {
     width:35vw;
@@ -66,6 +72,7 @@ section {
     transition:all 0.5s;
     top:16rem;
     left:15rem;
+    animation:moveButton 800ms;
 }
 .shippingbuttons {
     display:flex;
@@ -79,6 +86,24 @@ section {
     width:10rem;
 }
 
+@keyframes animate {
+    0% {
+        opacity:0.3;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@keyframes moveButton {
+    0% {
+        transform:translateX(20rem);
+        opacity:0.3;
+    }
+    100% {
+        transform:translateX(0rem);
+        opacity:1;
+    }
+}
 @media(max-width:1400px)
 {
     .shampooDetails {
@@ -272,5 +297,8 @@ section {
     .conditionerDetails {
         background-image:url("/public/halfConditioner5.png");
         background-position: bottom -9.5rem right -26rem;
+    }
+    .conditionerTitle {
+        font-size:28px;
     }
 }

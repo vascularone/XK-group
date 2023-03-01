@@ -27,7 +27,7 @@ const Shampoo = () => {
             <header>
 
             </header>
-            <section>
+            <section className="shampooDetails">
                 <span className="shampooTitle">Aqua Revive Shampoo</span>
                 <span className="shampooDescription2">The <strong>Schwarzkopf Gliss Aqua Revive Shampoo</strong> will moisturize and visibly improve the quality of your hair, without weighing it down!</span>
                 <ul>
@@ -65,8 +65,8 @@ State (must be select box), Phone Number, and Email Address.
                     <img src="glissPro.png" alt="gliss missing"></img>
                 </div>
                 <div className="footerInfoRight">
-                    <a href="#">PRIVACY POLICY  /</a>
-                    <a href="#">\ TERMS & CONDITIONS</a>
+                    <a href="#">PRIVACY POLICY  </a>
+                    <a href="#"> TERMS & CONDITIONS</a>
                 </div>
             </footer>
             {/* <form

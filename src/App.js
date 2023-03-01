@@ -5,8 +5,9 @@ import { BrowserRouter as Router, Routes, Route }
   from 'react-router-dom';
 import Landing from './components/pages/landingpage';
 import Checkout from './components/pages/checkoutpage';
-import Shipping from './components/pages/shippingpage';
 import Shampoo from "./components/pages/shampoo";
+import Spray from './components/pages/spray';
+import Conditioner from './components/pages/conditioner';
 import Thankyou from './components/pages/thankyoupage';
 
 function App() {
@@ -16,8 +17,8 @@ function App() {
       <Routes>
         <Route exaxt path='/' element={<Landing />} />
         <Route path='/shampoo' element={<Shampoo />} />
-        <Route path='/checkoutpage' element={<Checkout />} />
-        <Route path='/thankyoupage' element={<Thankyou />} />
+        <Route path='/conditioner' element={<Conditioner />} />
+        <Route path='/spray' element={<Spray />} />
       </Routes>
     </Router>
   );

@@ -7,15 +7,23 @@ header {
 }
 section {
     height:73.3vh;
-    /* background: rgb(50,94,124);
-    background: linear-gradient(0deg, rgba(50,94,124,1) 0%, rgba(36,64,84,1) 100%); */
+    display:flex;
+    flex-direction:column;
+}
+.shampooDetails {
     background-image:url("/public/halfShampoo5.png");
     background-repeat:no-repeat;
     background-position: bottom -14.5rem right 1rem;
-    /* display:flex;
-    flex-direction:row; */
-    display:flex;
-    flex-direction:column;
+}
+.conditionerDetails {
+    background-image:url("/public/halfConditioner.png");
+    background-repeat:no-repeat;
+    background-position: bottom -14.5rem right 1rem;
+}
+.expressDetails {
+    background-image:url("/public/halfExpress.png");
+    background-repeat:no-repeat;
+    background-position: bottom -14.5rem right 1rem;
 }
 .shampooTitle {
     position:relative;
@@ -71,20 +79,43 @@ section {
     width:10rem;
 }
 
-@media(max-width:1500px)
-{
-
-}
 @media(max-width:1400px)
 {
-    section {
+    .shampooDetails {
         background-image:url("/public/halfShampoo7.png");
         background-position: bottom -14.5rem right -5rem;
+    }
+    .conditionerDetails {
+        background-image:url("/public/halfConditioner2.png");
+        background-position: bottom -14.5rem right -7rem;
+    }
+    .expressDetails {
+        background-image:url("/public/halfExpress2.png");
+        background-repeat:no-repeat;
+        background-position: bottom -14.5rem right -5rem;
+    }
+    .shippingbuttons button {
+        top:15rem;
+    }
+    .shampooTitle {
+        top:5rem;
+    }
+    .shampooDescription2 {
+        top:9rem;
+    }
+    .shampooDescription3 {
+        top:10rem;
+    }
+    .shippingbuttons button {
+        top:11rem;
     }
 }
 @media(max-width:1200px)
 {
-    section {
+    .shampooDetails {
+        background-position: bottom -14.5rem right -10rem;
+    }
+    .conditionerDetails {
         background-position: bottom -14.5rem right -10rem;
     }
     .shampooTitle {
@@ -103,7 +134,7 @@ section {
         top:12rem;
         font-size:17px;
     }
-    section button {
+    .shippingbuttons button {
         top:13rem;
         left:8rem;
         height:2.5rem;
@@ -118,16 +149,21 @@ section {
 }
 @media(max-width:1000px)
 {
-    section {
+    .shampooDetails {
         background-image:url("/public/halfShampoo6.png");
         background-position: bottom  right -18rem;
-        
+    }
+    .conditionerDetails {
+        background-image:url("/public/halfConditioner3.png");
+        background-position: bottom -14.5rem right -15rem;
+    }
+    .expressDetails {
+        background-position: bottom -14.5rem right -10rem;
     }
 }
 @media(max-width:800px)
 {
-    section {
-        /* background-image:url("/public/halfShampoo10.png"); */
+    .shampooDetails {
             background-position: bottom  right -20rem;
     }
     .shampooTitle {
@@ -152,7 +188,7 @@ section {
         font-size:15px;
         font-weight:350;
     }
-    section button {
+    .shippingbuttons button {
         top:13rem;
         left:2rem;
         height:2.5rem;
@@ -165,9 +201,21 @@ section {
         width:7rem;
     }
 }
+@media(max-width:700px)
+{
+    .conditionerDetails {
+        background-image:url("/public/halfConditioner4.png");
+        background-position: bottom -10.5rem right -22rem;
+    }
+    .expressDetails {
+        background-image:url("/public/halfExpress4.png");
+        background-repeat:no-repeat;
+        background-position: bottom -14.5rem right -15rem;
+    }
+}
 @media(max-width:640px)
 {
-    section {
+    .shampooDetails {
         background-position: bottom  right -20rem;
     }
     .shampooTitle {
@@ -192,7 +240,7 @@ section {
         font-size:13px;
         font-weight:350;
     }
-    section button {
+    .shippingbuttons button {
         top:13rem;
         left:3.5rem;
         height:2rem;
@@ -207,5 +255,22 @@ section {
     }
     .ingredientButton {
         width:7rem;
+    }
+}
+@media(max-width:500px)
+{
+    .shampooDetails {
+        background-image:url("/public/halfShampoo72.png");
+        background-position: bottom  right -23rem;
+    }
+    .shampooDescription2 {
+        width:50vw;
+    }
+}
+@media(max-width:460px)
+{
+    .conditionerDetails {
+        background-image:url("/public/halfConditioner5.png");
+        background-position: bottom -9.5rem right -26rem;
     }
 }

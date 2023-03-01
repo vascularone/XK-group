@@ -250,11 +250,50 @@ footer .footerInfoRight a {
   footer .glissFooter span {
     font-size:12px;
   }
-  footer .footerInfoLeft, footer .footerInfoRight {
+  footer .footerInfoLeft {
     font-size:10px;
+  }
+  footer .footerInfoRight {
+    font-size:12px;
   }
   footer .footerInfoLeft {
     left:0rem;
     top:2.5rem;
+  }
+}
+@media(max-width:800px)
+{
+  footer .glissFooter {
+    left:-4rem; 
+  }
+  footer .glissFooter img {
+    width:100px;
+    height:50px;
+    top:3.5rem;
+  }
+  footer .glissFooter span {
+    font-size:10px;
+  }
+  footer .footerInfoLeft {
+    font-size:8px;
+  }
+  footer .footerInfoRight {
+    font-size:10px;
+  }
+  footer .footerInfoLeft {
+    left:-3rem;
+    top:2.5rem;
+  }
+}
+@media(max-width:600px)
+{
+  footer .glissFooter {
+    left:-5rem;
+  }
+  footer .glissFooter span {
+    display:none;
+  }
+  footer .footerInfoRight {
+    flex-direction:column;
   }
 }

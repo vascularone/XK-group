@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route }
 import Landing from './components/pages/landingpage';
 import Checkout from './components/pages/checkoutpage';
 import Shipping from './components/pages/shippingpage';
+import Shampoo from "./components/pages/shampoo";
 import Thankyou from './components/pages/thankyoupage';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       {/* <Navbar /> */}
       <Routes>
         <Route exaxt path='/' element={<Landing />} />
-        <Route path='/shippingpage' element={<Shipping />} />
+        <Route path='/shampoo' element={<Shampoo />} />
         <Route path='/checkoutpage' element={<Checkout />} />
         <Route path='/thankyoupage' element={<Thankyou />} />
       </Routes>

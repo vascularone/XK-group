@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.App {
+}
+header {
+    height:10vh;
+    background:rgb(50,94,124);
+}
+section {
+    height:73.3vh;
+    /* background: rgb(50,94,124);
+    background: linear-gradient(0deg, rgba(50,94,124,1) 0%, rgba(36,64,84,1) 100%); */
+    background-image:url("/public/halfShampoo5.png");
+    background-repeat:no-repeat;
+    background-position: bottom -14.5rem right 1rem;
+    /* display:flex;
+    flex-direction:row; */
+    display:flex;
+    flex-direction:column;
+}
+.shampooTitle {
+    position:relative;
+    left:15rem;
+    top:10rem;
+    font-size:50px;
+    font-family:'Rubik', sans-serif;
+    width:fit-content;
+    color:white;
+    -webkit-text-stroke: 3px rgb(50,94,124);
+}
+.shampooDescription2 , .shampooDescription3{
+    position:relative;
+    left:15rem;
+    font-family:'Rubik', sans-serif;
+    color:black;
+}
+.shampooDescription2 {
+    width:40vw;
+    font-weight:400;
+    top:14rem;
+    font-size:25px;
+    font-weight:400;
+}
+.shampooDescription3 {
+    width:35vw;
+    top:15rem;
+    font-size:20px;
+    font-weight:350;
+}
+.shippingbuttons button {
+    position:relative;;
+    border-radius:20px;
+    background:#232B2B;
+    font-size:15px;
+    cursor:pointer;
+    border:solid #232B2B;
+    height:3rem;
+    color:#5D8AA8;
+    transition:all 0.5s;
+    top:16rem;
+    left:15rem;
+}
+.shippingbuttons {
+    display:flex;
+    flex-direction:row;
+    gap:2rem;
+}
+.buyButton {
+    width:15rem;
+}
+.ingredientButton {
+    width:10rem;
+}
+
+@media(max-width:1500px)
+{
+
+}
+@media(max-width:1400px)
+{
+    section {
+        background-image:url("/public/halfShampoo7.png");
+        background-position: bottom -14.5rem right -5rem;
+    }
+}
+@media(max-width:1200px)
+{
+    section {
+        background-position: bottom -14.5rem right -10rem;
+    }
+    .shampooTitle {
+        left:8rem;
+        top:7rem;
+        font-size:47px;
+    }
+    .shampooDescription2 , .shampooDescription3{
+        left:8rem;
+    }
+    .shampooDescription2 {
+        top:11rem;
+        font-size:22px;
+    }
+    .shampooDescription3 {
+        top:12rem;
+        font-size:17px;
+    }
+    section button {
+        top:13rem;
+        left:8rem;
+        height:2.5rem;
+        font-size:13px;
+    }
+    .buyButton {
+        width:12rem;
+    }
+    .ingredientButton {
+        width:7rem;
+    }
+}
+@media(max-width:1000px)
+{
+    section {
+        background-image:url("/public/halfShampoo6.png");
+        background-position: bottom  right -18rem;
+        
+    }
+}
+@media(max-width:800px)
+{
+    section {
+        /* background-image:url("/public/halfShampoo10.png"); */
+            background-position: bottom  right -20rem;
+    }
+    .shampooTitle {
+
+        left:2rem;
+        top:7rem;
+        font-size:38px;
+        font-weight:800;
+    }
+    .shampooDescription2 , .shampooDescription3{
+        left:2rem;
+    }
+    .shampooDescription2 {
+        width:40vw;
+        font-weight:400;
+        top:11rem;
+        font-size:20px;
+        font-weight:400;
+    }
+    .shampooDescription3 {
+        top:12rem;
+        font-size:15px;
+        font-weight:350;
+    }
+    section button {
+        top:13rem;
+        left:2rem;
+        height:2.5rem;
+        font-size:13px;
+    }
+    .buyButton {
+        width:12rem;
+    }
+    .ingredientButton {
+        width:7rem;
+    }
+}
+@media(max-width:640px)
+{
+    section {
+        background-position: bottom  right -20rem;
+    }
+    .shampooTitle {
+
+        left:2rem;
+        top:7rem;
+        font-size:32px;
+        font-weight:900;
+    }
+    .shampooDescription2 , .shampooDescription3{
+        left:2rem;
+    }
+    .shampooDescription2 {
+        width:40vw;
+        font-weight:400;
+        top:11rem;
+        font-size:16px;
+        font-weight:400;
+    }
+    .shampooDescription3 {
+        top:12rem;
+        font-size:13px;
+        font-weight:350;
+    }
+    section button {
+        top:13rem;
+        left:3.5rem;
+        height:2rem;
+        font-size:13px;
+    }
+    .shippingbuttons {
+        flex-direction:column;
+        gap:1rem;
+    }
+    .buyButton {
+        width:12rem;
+    }
+    .ingredientButton {
+        width:7rem;
+    }
+}

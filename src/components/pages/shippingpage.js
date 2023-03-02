@@ -1,29 +1,21 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import $ from "jquery";
-import "../../App.css";
+import '../../App.css';
+import Dropdown from 'react-dropdown';
+// import 'react-dropdown/style.css';
+import "./dropDown.css"
+import countryList from 'react-select-country-list'
 const Shipping = () => {
     const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
+    const [number, setNumber] = useState("");
+    const [email, setEmail] = useState("");
+    const [state, setState] = useState("");
     const [result, setResult] = useState("");
-    const [emailLabelStyle, setEmailLabelStyle] = useState("");
-
-    const handleChange = (e) => {
-        setName(e.target.value);
-
-        // Check if the input field is not empty
-        if (e.target.value !== '') {
-            setEmailLabelStyle({
-                textShadow: '2px 0 0 teal,0 2px 0 teal,-2px 0 0 teal,0 -2px 0 teal',
-                transform: 'translateX(-5rem)',
-                transition: 'all 0.2s',
-            });
-        } else {
-            setEmailLabelStyle({
-                transition: 'all 0.3s'
-            });
-        }
-
-    };
-
+    const [zip, setZip] = useState("");
+    const [city, setCity] = useState("");
+    const [adress, setAdress] = useState("");
+    const options = useMemo(() => countryList().getData(), [])
     const handleSumbit = (e) => {
         e.preventDefault();
         const form = $(e.target);
@@ -39,85 +31,150 @@ const Shipping = () => {
 
     return (
         <div className="App">
-            {/* <form
-                action="http://localhost:8000/server.php"
-                method="post"
-                onSubmit={(event) => handleSumbit(event)}
-            >
-                <label htmlFor="name">Name: </label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={name}
-                    onChange={(event) => handleChange(event)}
-                />
-                <br />
-                <button type="submit">Submit</button>
-            </form>
-            <h1>{result}</h1> */}
             {/* First Name, Last Name, ZIP/Postal Code, Address, Apt/suite, City,
 State (must be select box), Phone Number, and Email Address. */}
+            {/* <header /> */}
             <section className="shippingSection">
+                <span>Billing info</span>
+                <form
+                    action="http://localhost:8000/server.php"
+                    method="post"
+                    onSubmit={(event) => handleSumbit(event)}
+                    className="shippingForm"
+                >
+                    <div className="row">
+
+                        <div className="col">
+                            <span>Name: </span>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                            <span>Surname: </span>
+                            <input
+                                type="text"
+                                id="surname"
+                                name="surname"
+                                value={surname}
+                                onChange={(e) => setSurname(e.target.value)}
+                            />
+                            <span className="pn">Phone Number: </span>
+                            <input
+                                type="text"
+                                id="number"
+                                name="number"
+                                value={number}
+                                onChange={(e) => setNumber(e.target.value)}
+                            />
+                            <span>Email: </span>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </div>
+
+                        <div className="col">
+
+                            <span>City: </span>
+                            <input
+                                type="city"
+                                id="city"
+                                name="city"
+                                value={city}
+                                onChange={(e) => setCity(e.target.value)}
+                            />
+                            <span>Adress: </span>
+                            <input
+                                type="adress"
+                                id="adress"
+                                name="adress"
+                                value={adress}
+                                onChange={(e) => setAdress(e.target.value)}
+                            />
+                            <span>ZIP Code: </span>
+                            <input
+                                type="zip"
+                                id="zip"
+                                name="zip"
+                                value={zip}
+                                onChange={(e) => setZip(e.target.value)}
+                            />
+                            <span>State: </span>
+                            <Dropdown options={options} onChange={() => setState(state)} value={state} placeholder="Select a state" />;
+                        </div>
+
+                    </div>
+                </form>
                 {/* <form
                     action="http://localhost:8000/server.php"
                     method="post"
                     onSubmit={(event) => handleSumbit(event)}
                     className="shippingForm"
                 >
-                    <label htmlFor="name" className="shippingLabel secondaryText">First name: </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={name}
-                        onChange={(event) => handleChange(event)}
-                    />
+                    <div className="inputForm first-last">
+                        <label htmlFor="name" className="shippingLabel">First name: </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={name}
+                            onChange={(event) => handleChange(event)}
+                        />
+                        <label htmlFor="name" className="shippingLabel">Last name: </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={name}
+                            onChange={(event) => handleChange(event)}
+                        />
+                    </div>
 
-                    <label htmlFor="name" className="shippingLabel">Last name: </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={name}
-                        onChange={(event) => handleChange(event)}
-                    />
-                    <br />
-                    <label htmlFor="name" className="shippingLabel">ZIP/Postal Code: </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={name}
-                        onChange={(event) => handleChange(event)}
-                    />
-                    <br />
-                    <label htmlFor="name" className="shippingLabel">Adress: </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={name}
-                        onChange={(event) => handleChange(event)}
-                    />
-                    <br />
-                    <label htmlFor="name" className="shippingLabel">Apt/Suite: </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={name}
-                        onChange={(event) => handleChange(event)}
-                    />
-                    <br />
-                    <label htmlFor="name" className="shippingLabel">City: </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={name}
-                        onChange={(event) => handleChange(event)}
-                    />
+                    <div className="inputForm zip-adress">
+                        <div className="zipLabel">
+                            <label htmlFor="name" className="shippingLabel">ZIP Code: </label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={name}
+                                onChange={(event) => handleChange(event)}
+                            />
+                        </div>
+                        <label htmlFor="name" className="shippingLabel">Adress: </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={name}
+                            onChange={(event) => handleChange(event)}
+                        />
+                    </div>
+                    <div className="inputForm apt-city">
+                        <label htmlFor="name" className="shippingLabel">Apt/Suite: </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={name}
+                            onChange={(event) => handleChange(event)}
+                        />
+                        <br />
+                        <label htmlFor="name" className="shippingLabel">City: </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={name}
+                            onChange={(event) => handleChange(event)}
+                        />
+                    </div>
                     <br />
                     <label htmlFor="name" className="shippingLabel">Sate: </label>
                     <input
@@ -148,29 +205,6 @@ State (must be select box), Phone Number, and Email Address. */}
                     <br />
                     <button type="submit" className="shippingButton">Submit</button>
                 </form> */}
-                <form
-                    action="http://localhost:8000/server.php"
-                    method="post"
-                    onSubmit={(event) => handleSumbit(event)}>
-                    <div className="contactMeInputs">
-                        <span className="contact-span" >Email</span>
-                        <input
-                            type="email"
-                            className="contact-input email-input"
-                            id="email"
-                            name="email"
-                            value={name}
-                            onChange={(event) => handleChange(event)}
-                            style={{ emailLabelStyle }}
-                            required
-                        />
-                        <span className="contact-span" >Subject</span>
-                        <input type="text" className="contact-input subject-input" required />
-                        <span className="contact-span" >Message</span>
-                        <textarea className="contact-input message-input" name="message" rows="4" cols="40" required></textarea>
-                    </div>
-                    <button className="submit-button">Submit</button>
-                </form>
                 <h1 style={{ color: "red" }}>{result}</h1>
             </section>
             <footer className="productFooter">

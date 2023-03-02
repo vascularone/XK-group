@@ -26,7 +26,7 @@ const Conditioner = () => {
 
     return (
         <div>
-            <header className="conditionerDetails" />
+            <header />
             <section className="conditionerDetails">
                 <span className="shampooTitle conditionerTitle">Aqua Revive Conditioner</span>
                 <span className="shampooDescription2">Recommended for the body for delicate, sensitive and problematic skin - requiring high protection against intense sunlight, sunburn and harmful UVA / UVB radiation</span>

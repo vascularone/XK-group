@@ -178,95 +178,54 @@ background: linear-gradient(0deg, rgba(34,64,84,1) 7%, rgba(17,32,42,1) 14%, rgb
   width:20rem;
 }
 .shippingSection {
-  height:83.5vh;
-  background: rgb(34,64,84);
-background: linear-gradient(0deg, rgba(34,64,84,1) 0%, rgba(0,0,0,1) 100%);
+  height:83.3vh;
+  display:flex;
+  background:rgba(34,64,84,1);
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 }
 .shippingForm {
-  height:10rem;
-  width:10rem;
-  position:relative;
-  top:10rem;
-  display:flex;
-  flex-direction:column;
-  margin:auto;
-  padding:auto;
-  
-  /* background:white; */
-}
-.firstShippingDiv {
-  display:flex;
-  flex-direction:row;
-}
-.shippingForm .shippingButton {
-  position:relative;
-  border-radius:20px;
-  /* background:#232B2B; */
-  background:white;
-  font-size:20px;
-  cursor:pointer;
-  /* border:solid #232B2B; */
-  border:solid white;
-  height:4rem;
-  /* color:#5D8AA8; */
-  color:red;
-  transition:all 0.5s;
-}
-.shippingLabel {
-  position:relative;
-  margin:auto;
-  padding:auto;
-  font-family:'Rubik', sans-serif;
-  font-size:40px;
-  font-weight:400;
-  bottom:5rem;
-}
-.contact-span {
-  position:relative;
-  width:fit-content;
   background:transparent;
-  font-weight:800;
+  padding:2.5rem 7rem;
+}
+.shippingForm span {
+  color:#d6d6d6;
+  display:flex;
+  align-items:center;
   font-size:20px;
-  top:5rem;
-  right:-0.5rem;
-  text-shadow:2px 0 0 red,0 2px 0 red,-2px 0 0 red,0 -2px 0 red;
-  color:white;
-  z-index:1;
+  font-family:'Rubik', sans-serif;
+  font-weight:400;
 }
-.contact-input {
-  position:relative;
-  /* right:13rem; */
-  top:3.2rem;
-  height:28px;
-  width:300px;
-  background:white;
-  caret-color:teal;
-  font-size:18px;
-  font-weight:700;
-  transition: all 0.3s;
-  border-top: 2px solid transparent;
-  border-image: linear-gradient(0.25turn, teal, red) 1;
-  border-bottom: 2px solid transparent;
-  border-left: 2px solid transparent;
-  border-right: 2px solid transparent;
+.shippingForm input {
+  background:transparent;
+  color:#d6d6d6;
+  height:30px;
+  font-family:'Rubik', sans-serif;
+  width:200px;
+  border:2.5px solid #d6d6d6;
 }
-.contactMeInputs {
+.shippingForm input:focus {
+  outline:none;
+}
+.row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:5rem;
+}
+.col {
   display:flex;
   flex-direction:column;
-  position:relative;
-  /* left:13rem; */
-  transition:all 1.5s;
-}
-.contact-input:focus {
-  outline: none;
+  gap:0.5rem;
 }
 footer {
   /* background: rgb(50,94,124);
   background: linear-gradient(0deg, rgba(50,94,124,1) 0%, rgba(36,64,84,1) 100%); */
   /* background: rgb(0,0,0);
 background: linear-gradient(0deg, rgba(0,0,0,1) 65%, rgba(34,64,84,1) 100%); */
-background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(34,64,84,1) 100%);
+  /* background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(34,64,84,1) 100%); */
+  background:black;
   height:10rem;
   position:relative;
   text-align:center;

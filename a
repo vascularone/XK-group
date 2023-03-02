@@ -1,0 +1,47 @@
+[33mcommit f00de8ecf0693cd9cc354d7b48aa29d90e19f185[m[33m ([m[1;36mHEAD -> [m[1;32mtesting[m[33m, [m[1;31morigin/testing[m[33m)[m
+Author: vascularone <rinorkastrati46@gmail.com>
+Date:   Thu Mar 2 01:11:31 2023 +0100
+
+    deatils page done, landing page updated
+
+[33mcommit 940fa14cd9ce0aa233fe8cd74dbac869f6141eb0[m
+Author: vascularone <rinorkastrati46@gmail.com>
+Date:   Wed Mar 1 13:31:26 2023 +0100
+
+    animation on shipping
+
+[33mcommit 677c7d2a876b287407632bd4af2cfd2e2ed80694[m
+Author: vascularone <rinorkastrati46@gmail.com>
+Date:   Wed Mar 1 03:44:52 2023 +0100
+
+    info pages added
+
+[33mcommit 79d8e5ef712daee3433a65229dcd666b03593ae4[m
+Author: vascularone <rinorkastrati46@gmail.com>
+Date:   Wed Mar 1 02:28:37 2023 +0100
+
+    info page started
+
+[33mcommit e48ddcb310f479687af383569eae52b7ce10c3a9[m
+Author: vascularone <rinorkastrati46@gmail.com>
+Date:   Tue Feb 28 22:02:11 2023 +0100
+
+    landing page update
+
+[33mcommit 2dca67e28dc3909f45d661c4b4792fd8ee9b1940[m
+Author: vascularone <rinorkastrati46@gmail.com>
+Date:   Tue Feb 28 16:10:17 2023 +0100
+
+    landing page created
+
+[33mcommit cd7346711f777ab53cbb22952da0c825b23001e6[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: vascularone <rinorkastrati46@gmail.com>
+Date:   Mon Feb 27 23:17:53 2023 +0100
+
+    first commit
+
+[33mcommit 179e9e52dc713d4e02a54b403b759ab4791e6308[m
+Author: vascularone <rinorkastrati46@gmail.com>
+Date:   Mon Feb 27 14:59:27 2023 +0100
+
+    Initialize project using Create React App

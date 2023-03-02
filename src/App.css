@@ -180,7 +180,7 @@ background: linear-gradient(0deg, rgba(34,64,84,1) 7%, rgba(17,32,42,1) 14%, rgb
 .shippingSection {
   height:83.3vh;
   display:flex;
-  background:rgba(34,64,84,1);
+  background:black;
   flex-direction:column;
   justify-content:center;
   align-items:center;

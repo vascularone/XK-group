@@ -9,6 +9,7 @@ import Shampoo from "./components/pages/shampoo";
 import Spray from './components/pages/spray';
 import Conditioner from './components/pages/conditioner';
 import Thankyou from './components/pages/thankyoupage';
+import Shipping from './components/pages/shippingpage'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/shampoo' element={<Shampoo />} />
         <Route path='/conditioner' element={<Conditioner />} />
         <Route path='/spray' element={<Spray />} />
+        <Route path='/shippingpage' element={<Shipping />} />
       </Routes>
     </Router>
   );

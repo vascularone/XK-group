@@ -1,5 +1,6 @@
 import { useState } from "react";
 import $ from "jquery";
+import { useNavigate } from 'react-router-dom';
 import "./productCSS.css";
 const Spray = () => {
     const [name, setName] = useState("");
@@ -21,12 +22,12 @@ const Spray = () => {
             },
         });
     };
+    const [toggle, setToggle] = useState(false);
+    const [toggle2, setToggle2] = useState(true);
 
     return (
         <div>
-            <header>
-
-            </header>
+            <header className="expressHeader" />
             <section className="expressDetails">
                 <span className="shampooTitle">Aqua Revive Express</span>
                 <span className="shampooDescription2"><strong>Schwarzkopf Gliss Aqua Revive Express</strong> moisturizes and visibly improves the quality of your hair without rinsing and without weighing it down!</span>
@@ -38,13 +39,15 @@ const Spray = () => {
                 </ul>
                 <div className="shippingbuttons">
                     <button className="buyButton">Buy Aqua Revive Express</button>
-                    <button className="ingredientButton">Ingredients</button>
+                    {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2) }}>
+                        <span>Ingredients</span>
+                    </button>)}
+                    {toggle && (<div className="ingredients">
+                        <button className="closeIngredients" onClick={() => { setToggle2(!toggle2); setToggle(!toggle) }}>Close</button>
+                        <span className="ingredientsSpan">Aqua (Water, Eau) · Cetearyl Alcohol · Quaternium-87 · Stearamidopropyl Dimethylamine · Dimethicone · Distearoylethyl Hydroxyethylmonium Methosulfate · Citric Acid · Glycerin · Dicaprylyl Carbonate · Sodium Benzoate · Dimethiconol · Potassium Sorbate · Polyquaternium-37 · Benzyl Alcohol · Parfum (Fragrance)</span>
+                    </div>)}
                 </div>
             </section>
-            {/* <section>
-                First Name, Last Name, ZIP/Postal Code, Address, Apt/suite, City,
-State (must be select box), Phone Number, and Email Address.
-            </section> */}
             <footer className="productFooter">
                 <div className="footerInfoLeft">
                     <span>
@@ -62,7 +65,7 @@ State (must be select box), Phone Number, and Email Address.
                 </div>
                 <div className="glissFooter">
                     <span>© Schwarzkopf Gliss Professional</span>
-                    <img src="glissPro.png" alt="gliss missing"></img>
+                    <img src="glissProfess.png" alt="gliss missing"></img>
                 </div>
                 <div className="footerInfoRight">
                     <a href="#">PRIVACY POLICY  </a>

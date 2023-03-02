@@ -1,32 +1,17 @@
 import { useState } from "react";
 import $ from "jquery";
 import "./productCSS.css";
+import { useNavigate } from 'react-router-dom';
 const Shampoo = () => {
-    const [name, setName] = useState("");
-    const [result, setResult] = useState("");
-
-    const handleChange = (e) => {
-        setName(e.target.value);
-    };
-
-    const handleSumbit = (e) => {
-        e.preventDefault();
-        const form = $(e.target);
-        $.ajax({
-            type: "POST",
-            url: form.attr("action"),
-            data: form.serialize(),
-            success(data) {
-                setResult(data);
-            },
-        });
-    };
-
+    const navigate = useNavigate();
+    const [toggle, setToggle] = useState(false);
+    const [toggle2, setToggle2] = useState(true);
+    const handleClick = () => {
+        navigate("/shippingpage");
+    }
     return (
         <div>
-            <header>
-
-            </header>
+            <header className="shampooHeader" />
             <section className="shampooDetails">
                 <span className="shampooTitle">Aqua Revive Shampoo</span>
                 <span className="shampooDescription2">The <strong>Schwarzkopf Gliss Aqua Revive Shampoo</strong> will moisturize and visibly improve the quality of your hair, without weighing it down!</span>
@@ -37,14 +22,16 @@ const Shampoo = () => {
                     <li className="shampooDescription3">Natural ingredients: 90% ingredients of natural origin (including water)</li>
                 </ul>
                 <div className="shippingbuttons">
-                    <button className="buyButton">Buy Aqua Revive Shampoo</button>
-                    <button className="ingredientButton">Ingredients</button>
+                    <button className="buyButton" onClick={handleClick}>Buy Aqua Revive Shampoo</button>
+                    {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2) }}>
+                        <span>Ingredients</span>
+                    </button>)}
+                    {toggle && (<div className="ingredients">
+                        <button className="closeIngredients" onClick={() => { setToggle2(!toggle2); setToggle(!toggle) }}>Close</button>
+                        <span className="ingredientsSpan">Aqua (Water, Eau) · Cetearyl Alcohol · Quaternium-87 · Stearamidopropyl Dimethylamine · Dimethicone · Distearoylethyl Hydroxyethylmonium Methosulfate · Citric Acid · Glycerin · Dicaprylyl Carbonate · Sodium Benzoate · Dimethiconol · Potassium Sorbate · Polyquaternium-37 · Benzyl Alcohol · Parfum (Fragrance)</span>
+                    </div>)}
                 </div>
             </section>
-            {/* <section>
-                First Name, Last Name, ZIP/Postal Code, Address, Apt/suite, City,
-State (must be select box), Phone Number, and Email Address.
-            </section> */}
             <footer className="productFooter">
                 <div className="footerInfoLeft">
                     <span>
@@ -62,30 +49,13 @@ State (must be select box), Phone Number, and Email Address.
                 </div>
                 <div className="glissFooter">
                     <span>© Schwarzkopf Gliss Professional</span>
-                    <img src="glissPro.png" alt="gliss missing"></img>
+                    <img src="glissProfess.png" alt="gliss missing"></img>
                 </div>
                 <div className="footerInfoRight">
                     <a href="#">PRIVACY POLICY  </a>
                     <a href="#"> TERMS & CONDITIONS</a>
                 </div>
             </footer>
-            {/* <form
-                action="http://localhost:8000/server.php"
-                method="post"
-                onSubmit={(event) => handleSumbit(event)}
-            >
-                <label htmlFor="name">Name: </label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={name}
-                    onChange={(event) => handleChange(event)}
-                />
-                <br />
-                <button type="submit">Submit</button>
-            </form>
-            <h1>{result}</h1> */}
         </div>
     );
 }

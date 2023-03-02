@@ -23,7 +23,7 @@ const Landing = () => {
         <div className="wrapper">
             <section className="navbar" >
                 <div className="navbar-text">
-                    <img src="glissHairPro.png" alt="no gliss" className="gliss" />
+                    <img src="glissBlue2.png" alt="no gliss" className="gliss" />
                     <div className="breaking-line"></div>
                     <span className="primaryText">HEALTHY HAIR</span>
                     <span className="secondaryText">TO BE CONFIDENT</span>
@@ -105,7 +105,7 @@ const Landing = () => {
                 </div>
                 <div className="glissFooter">
                     <span>© Schwarzkopf Gliss Professional</span>
-                    <img src="glissPro.png" alt="gliss missing"></img>
+                    <img src="glissProfess.png" alt="gliss missing"></img>
                 </div>
                 <div className="footerInfoRight">
                     <a href="#">PRIVACY POLICY  /</a>

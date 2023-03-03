@@ -13,88 +13,76 @@ ul li {
   width:40rem;
 }
 .aquaCheckout {
-  position:relative;
   border-radius:20px;
-  background:#232B2B;
+  background:white;
   font-size:20px;
   cursor:pointer;
-  border:solid #232B2B;
+  border:solid white;
   height:4rem;
-  color:#5D8AA8;
+  color:rgba(56,119,161,1);
   transition:all 0.5s;
   animation:moveButton 400ms;
-  bottom:10rem;
 }
 .navbar {
-  /* background: rgb(50,94,124);
-  background: linear-gradient(0deg, rgba(50,94,124,1) 0%, rgba(56,119,161,1) 35%, rgba(56,119,161,1) 65%, rgba(50,94,124,1) 100%); */
-  background: rgb(93,138,168);
-background: linear-gradient(0deg, rgba(34,64,84,1) 0%, rgba(0,0,0,1) 25%);
-/* background: rgb(34,64,84);
-background: linear-gradient(0deg, rgba(34,64,84,1) 7%, rgba(17,32,42,1) 15%, rgba(0,0,0,1) 21%, rgba(0,0,0,1) 100%); */
-/* background: rgb(34,64,84);
-background: linear-gradient(0deg, rgba(34,64,84,1) 7%, rgba(17,32,42,1) 14%, rgba(0,0,0,1) 17%, rgba(0,0,0,1) 100%); */
-  /* background: rgb(34,64,84);
-  background: linear-gradient(0deg, rgba(34,64,84,1) 0%, rgba(0,0,0,1) 17%, rgba(0,0,0,1) 100%); */
+  background:white;
   height:55vh;
   display: flex;
-  
   flex-direction:row;
 }
 .shampoos {
-  position:relative;
-  left:35rem;
-  bottom:3rem;
-  height:30rem;
+  position:relative;  
+  left:25rem;
+  bottom:4rem;
   height:500px;
   width:500px;
   animation:moveButton 300ms;
+  border-bottom:5px solid rgba(56,119,161,1);
 }
 .navbar-text {
-  height:40rem;
+  height:fit-content;
   position:relative;
   display:flex;
   flex-direction:row;
-  left:14rem;
-  color:#5D8AA8;
-  width:25rem;
+  left:18rem;
+  color:rgba(56,119,161,1);
+  width:fit-content;
   animation:moveButton 300ms;
-  top:5rem;
+  top:2.27rem;
 }
-.navbar-text .secondaryText {
-  right:19rem;
+.navbar-text .columnText {
+  display:flex;
+  flex-direction:column;
+  height:12rem;
+  position:relative;
+  right:5rem;
+  top:4rem;
+  
 }
 .gliss {
   position:relative;
   width:400px;
   animation:moveButton 300ms;
   height:400px;
-  margin: auto;
-  padding:auto;
   right:4.5rem;
-  bottom:8rem;
+  bottom:1rem;
 }
 .primaryText {
-  position:relative;
-  margin:auto;
-  padding:auto;
-  bottom:12rem;
-  width:31rem;
-  right:5rem;
+  width:15rem;
   font-size:50px;
   animation:moveButton 300ms;
   font-family:'Rubik', sans-serif;
   font-weight:450;
 }
 .secondaryText {
-  position:relative;
-  margin:auto;
-  padding:auto;
+  color:white;
+  width:15rem;
   animation:moveButton 300ms;
   font-family:'Rubik', sans-serif;
   font-size:40px;
   font-weight:400;
-  bottom:5rem;
+}
+.navbar .secondaryText, .navbar .primaryText{
+  color:rgba(56,119,161,1);
 }
 .breaking-line{
   padding-right:5px;
@@ -104,46 +92,36 @@ background: linear-gradient(0deg, rgba(34,64,84,1) 7%, rgba(17,32,42,1) 14%, rgb
   background:#5D8AA8;
   animation:moveButton 300ms;
 }
-.horizontal-line {
-  position:relative;
-  animation:moveButton 300ms;
-  background:#5D8AA8;
-  height:5px;
-  width:80rem;
-  top:28rem;
-  right:24.5rem;
-}
 .firstSection, .secondSection, .thirdSection{
   display:flex;
   flex-direction:row;
   justify-content:space-between;
 }
 .firstSection, .thirdSection {
-  height:90vh;
+  height:70vh;
 }
 .secondSection {
   height:70vh;
 }
 .firstSection {
-  background: rgb(50,94,124);
-  background: linear-gradient(0deg, #000000 0%, rgba(56,119,161,1) 35%, rgba(56,119,161,1) 65%, rgba(50,94,124,1) 90%, rgba(34,64,84,1) 100%);
+
+  background:rgba(56,119,161,1);
 }
 .secondSection{
-  background: #000000;
+  background: white;
 }
 .thirdSection {
-  background: rgb(50,94,124);
-  background: linear-gradient(180deg, #000000 0%, rgba(56,119,161,1) 35%, rgba(56,119,161,1) 65%, rgba(50,94,124,1) 90%, rgba(34,64,84,1) 100%);
+  background:rgba(56,119,161,1);
   padding-bottom:1rem;
 }
 .secondSection .aquaCheckout {
-  background:#5D8AA8;
-  color:black;
-  border:solid #5D8AA8;
+  background:rgba(56,119,161,1);
+  color:white;
+  border:solid rgba(56,119,161,1);
 }
 .aquaShampoo{
   position:relative;
-  top:9rem;
+  top:4rem;
   left:6rem;
   height:620px;
   animation:moveButton 350ms;
@@ -159,7 +137,7 @@ background: linear-gradient(0deg, rgba(34,64,84,1) 7%, rgba(17,32,42,1) 14%, rgb
 }
 .aquaSpray {
   position:relative;
-  top:13rem;
+  top:7rem;
   left:6rem;
   height:500px;
   animation:moveButton 350ms;
@@ -172,11 +150,16 @@ background: linear-gradient(0deg, rgba(34,64,84,1) 7%, rgba(17,32,42,1) 14%, rgb
   flex-direction:column;
   animation:moveButton 350ms;
   width:50rem;
-  top:14rem;
-  right:20rem;
+  top:12rem;
+  gap:3rem;
+  height:20rem;
+  right:10rem;
 }
 .secondSection .secondaryText {
-  color: #5D8AA8;
+  color: rgba(56,119,161,1);
+}
+.firstSection .secondaryText, .secondSection .secondaryText, .thirdSection .secondaryText {
+  width:fit-content;
 }
 .conditionerDescription {
   height:35rem;
@@ -185,20 +168,18 @@ background: linear-gradient(0deg, rgba(34,64,84,1) 7%, rgba(17,32,42,1) 14%, rgb
   flex-direction:column;
   animation:moveButton 350ms;
   width:50rem;
-  top:9rem;
-  left:17rem;
+  top:12rem;
+  height:20rem;
+  gap:3rem;
+  left:12rem;
 }
 .shampooDescription button, .sprayDescription button, .conditionerDescription button {
   width:20rem;
 }
 .shippingSection {
   height:73.3vh;
-  /* display:flex; */
   background: rgb(56,119,161);
 background: linear-gradient(0deg, rgba(56,119,161,1) 15%, rgba(34,64,84,1) 100%);
-  /* flex-direction:row; */
-  /* justify-content:center; */
-  /* align-items:center; */
 }
 .shippingForm {
   background:transparent;
@@ -240,7 +221,6 @@ background: linear-gradient(0deg, rgba(56,119,161,1) 15%, rgba(34,64,84,1) 100%)
 .col {
   display:flex;
   flex-direction:column;
-  flex-wrap:wrap;
   gap:2.5rem;
 }
 .phone-number , .city-adress{
@@ -288,7 +268,7 @@ footer {
 background: linear-gradient(0deg, rgba(0,0,0,1) 65%, rgba(34,64,84,1) 100%); */
   /* background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(34,64,84,1) 100%); */
-  background:black;
+  background:white;
   height:10rem;
   position:relative;
   text-align:center;
@@ -348,12 +328,48 @@ footer .footerInfoRight a {
   height:fit-content;
   color:rgb(50,94,124);
 }
+
 @keyframes moveButton {
   0% {
       opacity:0.3;
   }
   100% {
       opacity:1;
+  }
+}
+@media(max-width:1650px)
+{
+  .navbar-text {
+    left:6rem;
+  }
+  .shampoos {
+    width:450px;
+    height:450px;
+    bottom:2.8rem;
+  }
+  .shampooDescription, .sprayDescription {
+    right:0rem;
+  }
+  .conditionerDescription {
+    left:3rem;
+  }
+  .aquaShampoo{
+    /* top:4rem;
+    left:6rem; */
+    height:580px;
+    width:580px;
+  }
+  .aquaConditioner{
+    width:600px;
+    height:600px;
+    /* right:3rem;
+    top:3rem; */
+  }
+  .aquaSpray {
+    /* top:7rem;
+    left:6rem; */
+    height:450px;
+    width:450px;
   }
 }
 @media(max-width:1500px)
@@ -374,14 +390,66 @@ footer .footerInfoRight a {
   footer .footerInfoLeft {
     left:3rem;   
   }
+  .shampoos {
+    left:14rem;
+  }
 }
-@media(max-width:1400px)
+@media(max-width:1440px)
 {
   .shippingGliss {
     width:400px;
     height:200px;
     bottom:10rem;
     left:30rem;
+  }
+  .primaryText {
+    font-size:40px;
+  }
+  .secondaryText {
+    font-size:30px;
+  }
+  .columnText {
+    gap:2rem;
+  }
+  .gliss {
+    width:300px;
+    height:300px;
+    bottom:0rem;
+    top:2rem;
+  }
+  .firstSection .shampooDescription,  .thirdSection .sprayDescription {
+    width:30rem;
+    right:2rem;
+  }
+  .secondSection .conditionerDescription {
+    width:30rem;
+    left:6rem;
+  }
+}
+@media (max-width:1300px){
+  .shampoos {
+    width:400px;
+    height:400px;
+    bottom:0rem;
+    left:7rem;
+  }
+  .aquaShampoo{
+    top:7rem;
+    left:4rem;
+    height:480px;
+    width:480px;
+  }
+  .aquaConditioner{
+    width:500px;
+    height:500px;
+    /* right:3rem;
+    top:3rem; */
+  }
+  .aquaSpray {
+    /* top:7rem;
+    left:6rem; */
+    height:400px;
+    width:400px;
   }
 }
 @media(max-width:1080px)
@@ -407,6 +475,43 @@ footer .footerInfoRight a {
     left:0rem;
     top:2.5rem;
   }
+  .shampoos {
+    width:350px;
+    height:350px;
+    top:3rem;
+    left:0rem;
+  }
+  .navbar-text {
+    left:3rem;
+  }
+  .aquaShampoo{
+    top:8rem;
+    left:4rem;
+    height:400px;
+    width:400px;
+  }
+  .aquaConditioner{
+    width:440px;
+    height:440px;
+    right:0.5rem;
+    top:6rem;
+  }
+  .aquaSpray {
+    /* top:7rem;
+    left:6rem; */
+    height:400px;
+    width:400px;
+  }
+  .firstSection .shampooDescription,  .thirdSection .sprayDescription {
+    width:25rem;
+    right:4rem;
+    top:10rem;
+  }
+  .secondSection .conditionerDescription {
+    width:25rem;
+    left:6rem;
+  }
+  
 }
 @media(max-width:800px)
 {

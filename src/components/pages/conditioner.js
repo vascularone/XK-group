@@ -27,24 +27,26 @@ const Conditioner = () => {
     return (
         <div>
             <header />
-            <section className="conditionerDetails">
-                <span className="shampooTitle conditionerTitle">Aqua Revive Conditioner</span>
-                <span className="shampooDescription2">Recommended for the body for delicate, sensitive and problematic skin - requiring high protection against intense sunlight, sunburn and harmful UVA / UVB radiation</span>
-                <ul>
-                    <li className="shampooDescription3">Moisturization: up to 48 hours of moisturized hair feeling</li>
-                    <li className="shampooDescription3">Shiny and healthy-looking hair: Cared for hair full of healthy shine</li>
-                    <li className="shampooDescription3">Suitable for everyday use</li>
-                    <li className="shampooDescription3">Natural ingredients: 90% ingredients of natural origin (including water)</li>
-                </ul>
-                <div className="shippingbuttons">
-                    <button className="buyButton">Buy Aqua Revive Conditioner</button>
-                    {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2) }}>
-                        <span>Ingredients</span>
-                    </button>)}
-                    {toggle && (<div className="ingredients">
-                        <button className="closeIngredients" onClick={() => { setToggle2(!toggle2); setToggle(!toggle) }}>Close</button>
-                        <span className="ingredientsSpan">Aqua (Water, Eau) · Cetearyl Alcohol · Quaternium-87 · Stearamidopropyl Dimethylamine · Dimethicone · Distearoylethyl Hydroxyethylmonium Methosulfate · Citric Acid · Glycerin · Dicaprylyl Carbonate · Sodium Benzoate · Dimethiconol · Potassium Sorbate · Polyquaternium-37 · Benzyl Alcohol · Parfum (Fragrance)</span>
-                    </div>)}
+            <section className="conditionerSection">
+                <div className="conditionerDetails">
+                    <span className="shampooTitle conditionerTitle">Aqua Revive Conditioner</span>
+                    <span className="shampooDescription2">Recommended for the body for delicate, sensitive and problematic skin - requiring high protection against intense sunlight, sunburn and harmful UVA / UVB radiation</span>
+                    <ul>
+                        <li className="shampooDescription3">Moisturization: up to 48 hours of moisturized hair feeling</li>
+                        <li className="shampooDescription3">Shiny and healthy-looking hair: Cared for hair full of healthy shine</li>
+                        <li className="shampooDescription3">Suitable for everyday use</li>
+                        <li className="shampooDescription3">Natural ingredients: 90% ingredients of natural origin (including water)</li>
+                    </ul>
+                    <div className="shippingbuttons">
+                        <button className="buyButton">Buy Aqua Revive Conditioner</button>
+                        {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2) }}>
+                            <span>Ingredients</span>
+                        </button>)}
+                        {toggle && (<div className="ingredients">
+                            <button className="closeIngredients" onClick={() => { setToggle2(!toggle2); setToggle(!toggle) }}>Close</button>
+                            <span className="ingredientsSpan">Aqua (Water, Eau) · Cetearyl Alcohol · Quaternium-87 · Stearamidopropyl Dimethylamine · Dimethicone · Distearoylethyl Hydroxyethylmonium Methosulfate · Citric Acid · Glycerin · Dicaprylyl Carbonate · Sodium Benzoate · Dimethiconol · Potassium Sorbate · Polyquaternium-37 · Benzyl Alcohol · Parfum (Fragrance)</span>
+                        </div>)}
+                    </div>
                 </div>
             </section>
 

@@ -25,11 +25,12 @@ const Landing = () => {
                 <div className="navbar-text">
                     <img src="glissBlue2.png" alt="no gliss" className="gliss" />
                     <div className="breaking-line"></div>
-                    <span className="primaryText">HEALTHY HAIR</span>
-                    <span className="secondaryText">TO BE CONFIDENT</span>
+                    <div className="columnText">
+                        <span className="primaryText">HEALTHY HAIR</span>
+                        <span className="secondaryText">TO BE CONFIDENT</span>
+                    </div>
                 </div>
                 <img src="allAQUA3.png" alt="shampoos not responding" className="shampoos" />
-                <div className="horizontal-line"></div>
             </section>
 
             <section className="firstSection" >

@@ -28,24 +28,26 @@ const Spray = () => {
     return (
         <div>
             <header className="expressHeader" />
-            <section className="expressDetails">
-                <span className="shampooTitle">Aqua Revive Express</span>
-                <span className="shampooDescription2"><strong>Schwarzkopf Gliss Aqua Revive Express</strong> moisturizes and visibly improves the quality of your hair without rinsing and without weighing it down!</span>
-                <ul>
-                    <li className="shampooDescription3">Moisturization: up to 48 hours of moisturized hair feeling</li>
-                    <li className="shampooDescription3">Shiny and healthy-looking hair: Cared for hair full of healthy shine</li>
-                    <li className="shampooDescription3">Suitable for everyday use</li>
-                    <li className="shampooDescription3">Natural ingredients: 90% ingredients of natural origin (including water)</li>
-                </ul>
-                <div className="shippingbuttons">
-                    <button className="buyButton">Buy Aqua Revive Express</button>
-                    {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2) }}>
-                        <span>Ingredients</span>
-                    </button>)}
-                    {toggle && (<div className="ingredients">
-                        <button className="closeIngredients" onClick={() => { setToggle2(!toggle2); setToggle(!toggle) }}>Close</button>
-                        <span className="ingredientsSpan">Aqua (Water, Eau) · Cetearyl Alcohol · Quaternium-87 · Stearamidopropyl Dimethylamine · Dimethicone · Distearoylethyl Hydroxyethylmonium Methosulfate · Citric Acid · Glycerin · Dicaprylyl Carbonate · Sodium Benzoate · Dimethiconol · Potassium Sorbate · Polyquaternium-37 · Benzyl Alcohol · Parfum (Fragrance)</span>
-                    </div>)}
+            <section className="expressSection">
+                <div className="expressDetails">
+                    <span className="shampooTitle">Aqua Revive Express</span>
+                    <span className="shampooDescription2"><strong>Schwarzkopf Gliss Aqua Revive Express</strong> moisturizes and visibly improves the quality of your hair without rinsing and without weighing it down!</span>
+                    <ul>
+                        <li className="shampooDescription3">Moisturization: up to 48 hours of moisturized hair feeling</li>
+                        <li className="shampooDescription3">Shiny and healthy-looking hair: Cared for hair full of healthy shine</li>
+                        <li className="shampooDescription3">Suitable for everyday use</li>
+                        <li className="shampooDescription3">Natural ingredients: 90% ingredients of natural origin (including water)</li>
+                    </ul>
+                    <div className="shippingbuttons">
+                        <button className="buyButton">Buy Aqua Revive Express</button>
+                        {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2) }}>
+                            <span>Ingredients</span>
+                        </button>)}
+                        {toggle && (<div className="ingredients">
+                            <button className="closeIngredients" onClick={() => { setToggle2(!toggle2); setToggle(!toggle) }}>Close</button>
+                            <span className="ingredientsSpan">Aqua (Water, Eau) · Cetearyl Alcohol · Quaternium-87 · Stearamidopropyl Dimethylamine · Dimethicone · Distearoylethyl Hydroxyethylmonium Methosulfate · Citric Acid · Glycerin · Dicaprylyl Carbonate · Sodium Benzoate · Dimethiconol · Potassium Sorbate · Polyquaternium-37 · Benzyl Alcohol · Parfum (Fragrance)</span>
+                        </div>)}
+                    </div>
                 </div>
             </section>
             <footer className="productFooter">

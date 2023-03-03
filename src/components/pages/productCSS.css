@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// dark blue - rgba(34,64,84,1)
+// airforce blue - #5D8AA8
+//darker blue - #224054
+// some sweet blue - #416780
 .App {
 }
+
 header {
     height:10vh;
     /* background:rgb(50,94,124); */
@@ -11,13 +16,10 @@ background: linear-gradient(0deg, rgba(34,64,84,1) 0%, rgba(0,0,0,1) 100%);
     height:73.3vh;
     display:flex;
     flex-direction:column;
-    
 }
 .shampooDetails {
-    background-image:url("/public/halfShampoo5.png");
-    background-repeat:no-repeat;
-    animation:animate 800ms;
-    background-position: bottom -14.5rem right 1rem;
+    background: rgb(56,119,161);
+background: linear-gradient(0deg, rgba(56,119,161,1) 15%, rgba(34,64,84,1) 100%);
 }
 .conditionerDetails {
     background-image:url("/public/halfConditioner.png");
@@ -38,20 +40,22 @@ background: linear-gradient(0deg, rgba(34,64,84,1) 0%, rgba(0,0,0,1) 100%);
     font-size:50px;
     font-family:'Rubik', sans-serif;
     width:fit-content;
-    color:white;
-    -webkit-text-stroke: 3px rgb(50,94,124);
+    color:black;
+    /* -webkit-text-stroke: 3px black; */
     animation:moveButton 800ms;
+    font-weight:600;
 }
 .shampooDescription2 , .shampooDescription3{
     position:relative;
-    left:15rem;
     font-family:'Rubik', sans-serif;
     color:black;
+    left:15rem;
     animation:moveButton 800ms;
 }
 .shampooDescription2 {
     width:40vw;
     font-weight:400;
+    right:20rem;
     top:14rem;
     font-size:25px;
     font-weight:400;
@@ -61,7 +65,7 @@ background: linear-gradient(0deg, rgba(34,64,84,1) 0%, rgba(0,0,0,1) 100%);
     width:42vw;
     top:15rem;
     font-size:20px;
-    font-weight:350;
+    font-weight:400;
 }
 .ingredientButton, .buyButton , .closeIngredients{
     position:relative;
@@ -104,8 +108,9 @@ background: linear-gradient(0deg, rgba(34,64,84,1) 0%, rgba(0,0,0,1) 100%);
     border-radius:15px;
     /* background:#232B2B; */
     font-size:1vw;
-    color:#224054;
+    color:black;
     padding:0.5rem;
+    animation:moveButton 400ms;
 }
 @keyframes animate {
     0% {

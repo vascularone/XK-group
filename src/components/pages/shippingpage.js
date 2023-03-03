@@ -31,20 +31,21 @@ const Shipping = () => {
 
     return (
         <div className="App">
+            <header />
             {/* First Name, Last Name, ZIP/Postal Code, Address, Apt/suite, City,
 State (must be select box), Phone Number, and Email Address. */}
             {/* <header /> */}
             <section className="shippingSection">
-                <span>Billing info</span>
                 <form
                     action="http://localhost:8000/server.php"
                     method="post"
                     onSubmit={(event) => handleSumbit(event)}
                     className="shippingForm"
                 >
-                    <div className="row">
+                    <span className="billing-info">BILLING INFORMATION</span>
+                    <div className="col">
 
-                        <div className="col">
+                        <div className="row">
                             <span>Name: </span>
                             <input
                                 type="text"
@@ -61,7 +62,9 @@ State (must be select box), Phone Number, and Email Address. */}
                                 value={surname}
                                 onChange={(e) => setSurname(e.target.value)}
                             />
-                            <span className="pn">Phone Number: </span>
+                        </div>
+                        <div className="row phone-number">
+                            <span className="pn">Tel. : </span>
                             <input
                                 type="text"
                                 id="number"
@@ -69,6 +72,8 @@ State (must be select box), Phone Number, and Email Address. */}
                                 value={number}
                                 onChange={(e) => setNumber(e.target.value)}
                             />
+                        </div>
+                        <div className="row email">
                             <span>Email: </span>
                             <input
                                 type="email"
@@ -78,8 +83,7 @@ State (must be select box), Phone Number, and Email Address. */}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
-
-                        <div className="col">
+                        <div className="row city-adress">
 
                             <span>City: </span>
                             <input
@@ -97,6 +101,8 @@ State (must be select box), Phone Number, and Email Address. */}
                                 value={adress}
                                 onChange={(e) => setAdress(e.target.value)}
                             />
+                        </div>
+                        <div className="row zip-state">
                             <span>ZIP Code: </span>
                             <input
                                 type="zip"
@@ -106,105 +112,12 @@ State (must be select box), Phone Number, and Email Address. */}
                                 onChange={(e) => setZip(e.target.value)}
                             />
                             <span>State: </span>
-                            <Dropdown options={options} onChange={() => setState(state)} value={state} placeholder="Select a state" />;
+                            <Dropdown options={options} onChange={() => setState(state)} value={state} placeholder="Select a state" />
                         </div>
 
                     </div>
                 </form>
-                {/* <form
-                    action="http://localhost:8000/server.php"
-                    method="post"
-                    onSubmit={(event) => handleSumbit(event)}
-                    className="shippingForm"
-                >
-                    <div className="inputForm first-last">
-                        <label htmlFor="name" className="shippingLabel">First name: </label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={name}
-                            onChange={(event) => handleChange(event)}
-                        />
-                        <label htmlFor="name" className="shippingLabel">Last name: </label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={name}
-                            onChange={(event) => handleChange(event)}
-                        />
-                    </div>
-
-                    <div className="inputForm zip-adress">
-                        <div className="zipLabel">
-                            <label htmlFor="name" className="shippingLabel">ZIP Code: </label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                value={name}
-                                onChange={(event) => handleChange(event)}
-                            />
-                        </div>
-                        <label htmlFor="name" className="shippingLabel">Adress: </label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={name}
-                            onChange={(event) => handleChange(event)}
-                        />
-                    </div>
-                    <div className="inputForm apt-city">
-                        <label htmlFor="name" className="shippingLabel">Apt/Suite: </label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={name}
-                            onChange={(event) => handleChange(event)}
-                        />
-                        <br />
-                        <label htmlFor="name" className="shippingLabel">City: </label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={name}
-                            onChange={(event) => handleChange(event)}
-                        />
-                    </div>
-                    <br />
-                    <label htmlFor="name" className="shippingLabel">Sate: </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={name}
-                        onChange={(event) => handleChange(event)}
-                    />
-                    <br />
-                    <label htmlFor="name" className="shippingLabel">Phone number: </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={name}
-                        onChange={(event) => handleChange(event)}
-                    />
-                    <br />
-                    <label htmlFor="name" className="shippingLabel">Email adress: </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={name}
-                        onChange={(event) => handleChange(event)}
-                    />
-                    <br />
-                    <button type="submit" className="shippingButton">Submit</button>
-                </form> */}
+                <img src="glissPro.png" alt="no glissProfess" className="shippingGliss" />
                 <h1 style={{ color: "red" }}>{result}</h1>
             </section>
             <footer className="productFooter">
@@ -224,14 +137,14 @@ State (must be select box), Phone Number, and Email Address. */}
                 </div>
                 <div className="glissFooter">
                     <span>© Schwarzkopf Gliss Professional</span>
-                    <img src="glissProfess.png" alt="gliss missing"></img>
+                    {/* <img src="glissProfess.png" alt="gliss missing"></img> */}
                 </div>
                 <div className="footerInfoRight">
                     <a href="#">PRIVACY POLICY  </a>
                     <a href="#"> TERMS & CONDITIONS</a>
                 </div>
             </footer>
-        </div>
+        </div >
     );
 }
 

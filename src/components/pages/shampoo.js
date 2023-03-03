@@ -1,5 +1,4 @@
 import { useState } from "react";
-import $ from "jquery";
 import "./productCSS.css";
 import { useNavigate } from 'react-router-dom';
 const Shampoo = () => {
@@ -13,23 +12,25 @@ const Shampoo = () => {
         <div>
             <header className="shampooHeader" />
             <section className="shampooDetails">
-                <span className="shampooTitle">Aqua Revive Shampoo</span>
-                <span className="shampooDescription2">The <strong>Schwarzkopf Gliss Aqua Revive Shampoo</strong> will moisturize and visibly improve the quality of your hair, without weighing it down!</span>
-                <ul>
-                    <li className="shampooDescription3">Moisturization: up to 48 hours of moisturized hair feeling</li>
-                    <li className="shampooDescription3">Shiny and healthy-looking hair: Cared for hair full of healthy shine</li>
-                    <li className="shampooDescription3">Suitable for everyday use</li>
-                    <li className="shampooDescription3">Natural ingredients: 90% ingredients of natural origin (including water)</li>
-                </ul>
-                <div className="shippingbuttons">
-                    <button className="buyButton" onClick={handleClick}>Buy Aqua Revive Shampoo</button>
-                    {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2) }}>
-                        <span>Ingredients</span>
-                    </button>)}
-                    {toggle && (<div className="ingredients">
-                        <button className="closeIngredients" onClick={() => { setToggle2(!toggle2); setToggle(!toggle) }}>Close</button>
-                        <span className="ingredientsSpan">Aqua (Water, Eau) · Cetearyl Alcohol · Quaternium-87 · Stearamidopropyl Dimethylamine · Dimethicone · Distearoylethyl Hydroxyethylmonium Methosulfate · Citric Acid · Glycerin · Dicaprylyl Carbonate · Sodium Benzoate · Dimethiconol · Potassium Sorbate · Polyquaternium-37 · Benzyl Alcohol · Parfum (Fragrance)</span>
-                    </div>)}
+                <div className="content">
+                    <span className="shampooTitle">Aqua Revive Shampoo</span>
+                    <span className="shampooDescription2">The <strong className="glissAqua">Schwarzkopf Gliss Aqua Revive Shampoo</strong> will moisturize and visibly improve the quality of your hair, without weighing it down!</span>
+                    <ul>
+                        <li className="shampooDescription3">Moisturization: up to 48 hours of moisturized hair feeling</li>
+                        <li className="shampooDescription3">Shiny and healthy-looking hair: Cared for hair full of healthy shine</li>
+                        <li className="shampooDescription3">Suitable for everyday use</li>
+                        <li className="shampooDescription3">Natural ingredients: 90% ingredients of natural origin (including water)</li>
+                    </ul>
+                    <div className="shippingbuttons">
+                        <button className="buyButton" onClick={handleClick}>Buy Aqua Revive Shampoo</button>
+                        {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2) }}>
+                            <span>Ingredients</span>
+                        </button>)}
+                        {toggle && (<div className="ingredients">
+                            <button className="closeIngredients" onClick={() => { setToggle2(!toggle2); setToggle(!toggle) }}>Close</button>
+                            <span className="ingredientsSpan">Aqua (Water, Eau) · Cetearyl Alcohol · Quaternium-87 · Stearamidopropyl Dimethylamine · Dimethicone · Distearoylethyl Hydroxyethylmonium Methosulfate · Citric Acid · Glycerin · Dicaprylyl Carbonate · Sodium Benzoate · Dimethiconol · Potassium Sorbate · Polyquaternium-37 · Benzyl Alcohol · Parfum (Fragrance)</span>
+                        </div>)}
+                    </div>
                 </div>
             </section>
             <footer className="productFooter">
@@ -49,7 +50,7 @@ const Shampoo = () => {
                 </div>
                 <div className="glissFooter">
                     <span>© Schwarzkopf Gliss Professional</span>
-                    <img src="glissProfess.png" alt="gliss missing"></img>
+                    {/* <img src="glissProfess.png" alt="gliss missing"></img> */}
                 </div>
                 <div className="footerInfoRight">
                     <a href="#">PRIVACY POLICY  </a>

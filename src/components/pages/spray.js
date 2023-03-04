@@ -1,7 +1,7 @@
 import { useState } from "react";
 import $ from "jquery";
 import { useNavigate } from 'react-router-dom';
-import "./productCSS.css";
+import "../css/productCSS.css";
 const Spray = () => {
     const [name, setName] = useState("");
     const [result, setResult] = useState("");
@@ -27,9 +27,9 @@ const Spray = () => {
 
     return (
         <div>
-            <header className="expressHeader" />
-            <section className="expressSection">
-                <div className="expressDetails">
+            <header className="shampooHeader" />
+            <section className="shampooSection">
+                <div className="shampooDetails expressDetails">
                     <span className="shampooTitle">Aqua Revive Express</span>
                     <span className="shampooDescription2"><strong>Schwarzkopf Gliss Aqua Revive Express</strong> moisturizes and visibly improves the quality of your hair without rinsing and without weighing it down!</span>
                     <ul>

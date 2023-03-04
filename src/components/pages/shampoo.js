@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./productCSS.css";
+import "../css/productCSS.css";
 import { useNavigate } from 'react-router-dom';
 const Shampoo = () => {
     const navigate = useNavigate();
@@ -10,9 +10,10 @@ const Shampoo = () => {
     }
     return (
         <div>
-            <header className="shampooHeader" />
+            {/* <header className="shampooHeader" /> */}
             <section className="shampooSection">
                 <div className="shampooDetails">
+                    {/* <img src="aquaSplash3.png" alt="noaquaSplash" className="hiddenShampoo" /> */}
                     <span className="shampooTitle">Aqua Revive Shampoo</span>
                     <span className="shampooDescription2">The <strong className="glissAqua">Schwarzkopf Gliss Aqua Revive Shampoo</strong> will moisturize and visibly improve the quality of your hair, without weighing it down!</span>
                     <ul>
@@ -31,8 +32,8 @@ const Shampoo = () => {
                             <span className="ingredientsSpan">Aqua (Water, Eau) · Cetearyl Alcohol · Quaternium-87 · Stearamidopropyl Dimethylamine · Dimethicone · Distearoylethyl Hydroxyethylmonium Methosulfate · Citric Acid · Glycerin · Dicaprylyl Carbonate · Sodium Benzoate · Dimethiconol · Potassium Sorbate · Polyquaternium-37 · Benzyl Alcohol · Parfum (Fragrance)</span>
                         </div>)}
                     </div>
-                    <img src="aquaSplash2.png" alt="noaquaSplash" />
                 </div>
+                <img src="aquaSplash3.png" alt="noaquaSplash" className="shampooProduct" />
             </section>
             <footer className="productFooter">
                 <div className="footerInfoLeft">

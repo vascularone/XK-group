@@ -1,6 +1,6 @@
 import { useState } from "react";
 import $ from "jquery";
-import "./productCSS.css";
+import "../css/productCSS.css";
 const Conditioner = () => {
     const [name, setName] = useState("");
     const [result, setResult] = useState("");
@@ -27,9 +27,9 @@ const Conditioner = () => {
     return (
         <div>
             <header />
-            <section className="conditionerSection">
-                <div className="conditionerDetails">
-                    <span className="shampooTitle conditionerTitle">Aqua Revive Conditioner</span>
+            <section className="shampooSection conditionerSection">
+                <div className="shampooDetails conditionerDetails">
+                    <span className="shampooTitle">Aqua Revive Conditioner</span>
                     <span className="shampooDescription2">Recommended for the body for delicate, sensitive and problematic skin - requiring high protection against intense sunlight, sunburn and harmful UVA / UVB radiation</span>
                     <ul>
                         <li className="shampooDescription3">Moisturization: up to 48 hours of moisturized hair feeling</li>

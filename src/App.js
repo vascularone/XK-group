@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route }
   from 'react-router-dom';
 import Landing from './components/pages/landingpage';
@@ -21,6 +20,8 @@ function App() {
         <Route path='/conditioner' element={<Conditioner />} />
         <Route path='/spray' element={<Spray />} />
         <Route path='/shippingpage' element={<Shipping />} />
+        <Route path='/checkoutpage' element={<Checkout />} />
+        <Route path='/thankyoupage' element={<Thankyou />} />
       </Routes>
     </Router>
   );

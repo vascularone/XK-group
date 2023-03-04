@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* // dark blue - rgba(34,64,84,1)
+// airforce blue - #5D8AA8
+//darker blue - #224054
+// some sweet blue - #416780
+// definitive blue - rgba(56,119,161,1); */
+
+.App {
+}
+ul {
+    list-style-type: square;
+  }
+ul li {
+    width:40rem;
+}
+header {
+    height:4vh;
+    background: rgba(56,119,161,1);
+}
+.shampooSection, .conditionerSection, .expressSection {
+    height:83.3vh;
+    background:white;
+    display:flex;
+    flex-direction:row;
+}
+.shampooDetails , .conditionerDetails, .expressDetails {
+    display:flex;
+    flex-direction:column;
+    width:fit-content;
+    gap:2rem;
+    position:relative;
+    left:10rem;
+    top:9rem;
+    height:fit-content;
+    z-index:100;
+}
+
+.shampooTitle {
+    font-size:70px;
+    font-family:'Rubik', sans-serif;
+    width:fit-content;
+    color:white;
+    -webkit-text-stroke: 3px rgba(56,119,161,1);
+    animation:moveButton 800ms;
+    font-weight:600;
+}
+.shampooDescription2 , .shampooDescription3{
+    font-family:'Rubik', sans-serif;
+    color:rgba(56,119,161,1);;
+    animation:moveButton 800ms;
+}
+.shampooDescription2 {
+    width:40rem;
+    font-size:30px;
+    
+}
+.shampooDescription3 {
+    width:40rem;
+    font-size:20px;
+}
+.ingredientButton, .buyButton , .closeIngredients{
+    position:relative;
+    border-radius:20px;
+    background:rgba(56,119,161,1);;
+    font-size:15px;
+    cursor:pointer;
+    border:solid rgba(56,119,161,1);;
+    height:3rem;
+    color:white;
+    transition:all 0.5s;
+    animation:moveButton 400ms;
+}
+.shippingbuttons {
+    display:flex;
+    flex-direction:row;
+    gap:2rem;
+}
+.buyButton {
+    width:15rem;
+}
+.ingredientButton {
+    width:10rem;
+}
+.ingredients {
+    display:flex;
+    flex-direction:column;
+}
+.closeIngredients {
+    width:8rem;
+    height:3rem;
+}
+.ingredientsSpan {
+    position:absolute;
+    width:38vw;
+    bottom:11rem;
+    left:15rem;
+    border-radius:15px;
+    font-size:1vw;
+    color:black;
+    padding:0.5rem;
+    animation:moveButton 400ms;
+}
+.productFooter {
+    background:rgba(56,119,161,1);
+
+}
+.productFooter .glissFooter span , .productFooter span, .productFooter .footerInfoRight a{
+    color:white;
+}
+.shampooProduct {
+    position:absolute;
+    top:8rem;
+    right:10rem;
+    width:600px;
+    height:600px;
+}
+.hiddenShampoo {
+    display:none;
+}
+@keyframes animate {
+    0% {
+        opacity:0.3;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@keyframes moveButton {
+    0% {
+        opacity:0.3;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@media screen and (max-width:1500px) 
+{
+    .shampooDetails {
+        width:45vw;
+        left:4rem;
+        /* top:7rem; */
+    }
+    .shampooDescription2 {
+        width:40vw;
+        font-size:20px
+    }
+    .shampooDescription3 {
+        width:30vw;
+        font-size:15px;
+    }
+    .shampooProduct {
+        right:2rem;
+    }
+
+}
+@media screen and (max-width:1024px)
+{
+    .shampooProduct {
+        width:500px;
+        height:500px;
+        right:0rem;
+        /* top:6rem; */
+    }
+    .shampooDetails {
+        left:5rem;
+    }
+    .shampooSection {
+        /* height:80vh; */
+    }
+    .shampooTitle {
+        font-size:60px;
+    }
+}
+@media screen and (max-width:800px)
+{
+    .shampooProduct
+    {
+        display:none;
+    }
+    .shampooDetails {
+        width:85vw;
+        left:2rem;
+    }
+    .shampooSection {
+        height:85.3vh;
+    }
+    .shampooTitle {
+        font-size:50px;
+    }
+    .shampooDescription2  {
+        width:fit-content;
+        font-size:23px;
+    }
+    .shampooDescription3 {
+        width:fit-content;
+        font-size:18px;
+    }
+    .shippingbuttons {
+        gap:1rem;
+        flex-direction:column;
+    }
+}
+@media screen and (max-width:600px)
+{
+    .shampooTitle {
+        font-size:45px;
+    }
+    .shampooDescription2 {
+        font-size:20px;
+    }
+    .shampooDescription3 {
+        font-size:15px;
+    }
+}
+@media screen and (max-width:375px) 
+{
+    .shampooDescription2 {
+        font-size:17px;
+    }
+    .shampooDescription3 {
+        font-size:12px;
+    }
+    .buyButton, .ingredientButton {
+        font-size:4vw;
+        height:2.5rem;
+    }
+    .buyButton {
+        width:50vw;
+    }
+    .ingredientButton {
+        width:40vw;
+    }
+}

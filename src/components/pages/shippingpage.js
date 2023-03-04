@@ -1,11 +1,13 @@
 import { useState, useMemo } from "react";
 import $ from "jquery";
-import '../../App.css';
+import '../css/shipping.css';
 import Dropdown from 'react-dropdown';
+import { useNavigate } from "react-router-dom";
 // import 'react-dropdown/style.css';
 import "./dropDown.css"
 import countryList from 'react-select-country-list'
 const Shipping = () => {
+    const navigate = useNavigate();
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [number, setNumber] = useState("");
@@ -28,13 +30,13 @@ const Shipping = () => {
             },
         });
     };
+    const handleClick = () => {
+        navigate("/checkoutpage");
+    }
 
     return (
         <div className="App">
             <header />
-            {/* First Name, Last Name, ZIP/Postal Code, Address, Apt/suite, City,
-State (must be select box), Phone Number, and Email Address. */}
-            {/* <header /> */}
             <section className="shippingSection">
                 <form
                     action="http://localhost:8000/server.php"
@@ -116,8 +118,9 @@ State (must be select box), Phone Number, and Email Address. */}
                         </div>
 
                     </div>
+                    <button type="submit" onClick={handleClick}></button>
                 </form>
-                <img src="glissPro.png" alt="no glissProfess" className="shippingGliss" />
+                <img src="glissProfess.png" alt="no glissProfess" className="shippingGliss" />
                 <h1 style={{ color: "red" }}>{result}</h1>
             </section>
             <footer className="productFooter">

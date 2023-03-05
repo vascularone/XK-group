@@ -13,10 +13,6 @@ ul {
 ul li {
     width:40rem;
 }
-header {
-    height:4vh;
-    background: rgba(56,119,161,1);
-}
 .shampooSection, .conditionerSection, .expressSection {
     height:83.3vh;
     background:white;
@@ -117,6 +113,16 @@ header {
 .hiddenShampoo {
     display:none;
 }
+.states {
+    border:3px solid rgba(56,119,161,1);
+    color:rgba(56,119,161,1);
+    height:2.5rem;
+    border-radius:5px;
+    font-size:15px;
+}
+.states {
+    width:10rem;
+  }
 @keyframes animate {
     0% {
         opacity:0.3;

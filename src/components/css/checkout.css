@@ -1,0 +1,71 @@
+header {
+    height:10vh;
+    background: rgba(56,119,161,1);
+  }
+  .shippingSection {
+      height:83.3vh;
+      background: white;
+      display: flex;
+      flex-direction:column;
+     justify-content: center;
+      align-items: center;
+    }
+    .checkoutForm {
+      position:relative;
+      width:fit-content;
+      height:fit-content;
+      animation:moveButton 400ms;
+    }
+     .checkoutForm input {
+      background:rgba(56,119,161,0.3) !important;
+      color:black;
+      height:45px;
+      font-family:'Rubik', sans-serif;
+      width:20rem;
+      border:none;
+      font-size:20px;
+    }
+    .checkoutForm span{
+        display:flex;
+        color:rgba(56,119,161,1);
+        font-size:20px;
+    }
+    .checkoutForm input:focus, .checkoutForm select:focus{
+      outline:none;
+    }
+    .checkOutrow {
+        display:flex;
+        flex-wrap:wrap;
+        text-align:center;
+        align-items:center; 
+        gap:0.5rem;
+    }
+    .checkOutcol {
+        display:flex;
+        flex-direction:column;
+        gap:2rem;
+      }
+
+
+  .months , .year {
+    border:3px solid rgba(56,119,161,1);
+    color:rgba(56,119,161,1);
+    height:2rem;
+    border-radius:5px;
+    font-size:15px;
+  }
+
+  .months {
+    width:3rem;
+  }
+  .year {
+    width:4rem;
+  }
+  form .cvv {
+    width:10rem;
+  }
+  .error-message {
+    color: red;
+    font-size: 14px;
+  }
+  

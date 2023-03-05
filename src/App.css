@@ -214,7 +214,6 @@ footer .footerInfoLeft {
   height:fit-content;   
 }
 footer .footerInfoRight {
-  right:10rem;
   display:flex;
   flex-direction:row;
   top:4rem;
@@ -258,12 +257,6 @@ footer .footerInfoRight a {
   .shippingGliss {
     width:35vw;
     height:17.5vw;
-  }
-}
-@media(max-width:1270px)
-{
-  .shippingGliss{
-    display:none;
   }
 }
 @media(max-width:1080px)

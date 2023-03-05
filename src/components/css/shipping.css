@@ -1,30 +1,28 @@
+header {
+  height:10vh;
+  background: rgba(56,119,161,1);
+}
 .shippingSection {
-    height:73.3vh;
+    height:83.3vh;
     background: white;
+    display: flex;
+    flex-direction:column;
+   justify-content: center;
+    align-items: center;
   }
   .shippingForm {
-    background:transparent;
-    width:45rem;
-    transform:translateY(7rem) translateX(10rem);
+    position:relative;
+    width:fit-content;
+    height:fit-content;
     animation:moveButton 400ms;
   }
-  .shippingForm span {
-    color:rgba(56,119,161,1);
-    display:flex;
-    align-items:center;
-    flex-direction:column;
-    font-size:23px;
-    font-family:'Rubik', sans-serif;
-    font-weight:400;
-  }
   .shippingForm input {
-    background:transparent !important;
-    color:rgba(56,119,161,1);
-    height:30px;
+    background:rgba(56,119,161,0.3) !important;
+    color:black;
+    height:45px;
     font-family:'Rubik', sans-serif;
-    width:fit-content;
-    border:3px solid rgba(56,119,161,1);
-    border-radius:5px;
+    width:25rem;
+    border:none;
     font-size:20px;
   }
   .shippingForm input:focus {
@@ -40,28 +38,15 @@
     flex-direction:column;
     gap:2.5rem;
   }
-  .phone-number , .city-adress{
-    position:relative;
-    left:20px;
+  form .adress {
+    width:29rem;
   }
-  .phone-number {
-    width:350px;
+  form .zip {
+    width:7rem;
   }
-  .email {
-    position:relative;
-    left:5px;
-  }
-  .email input {
-    width:350px;
-  }
-  .zip-state {
-    position:relative;
-    right:30px;
-  }
-  .shippingForm .billing-info {
+  .billing-info {
       position:relative;
-      
-      bottom:2rem;
+      bottom:4rem;
       font-size:60px;
       font-family:'Rubik', sans-serif;
       width:fit-content;
@@ -69,12 +54,23 @@
       -webkit-text-stroke: 2px #5D8AA8;
       animation:moveButton 800ms;
       font-weight:700;
-  }
-  .shippingGliss {
-    position:relative;
-    left:30vw;
-    animation:moveButton 800ms;
-    bottom:15rem;
-    width:40vw;
-    height:20vw;
-  }
+ }
+ .aquaShipping {
+  position:relative;
+  top:2.5rem;
+  background:rgba(56,119,161,0.8);
+  font-size:20px;
+  cursor:pointer;
+  border:none;
+  height:3rem;
+  color:white;
+  transition:all 0.5s;
+  animation:moveButton 400ms;
+  width:20rem;
+}
+.shippingGliss {
+  width:350px;
+  height:175px;
+  position:relative;
+  bottom:5rem;
+}

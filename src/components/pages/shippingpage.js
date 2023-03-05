@@ -1,127 +1,165 @@
-import { useState, useMemo } from "react";
+import { useState, useEffect, useRef } from "react";
 import $ from "jquery";
 import '../css/shipping.css';
-import Dropdown from 'react-dropdown';
 import { useNavigate } from "react-router-dom";
-// import 'react-dropdown/style.css';
 import "./dropDown.css"
-import countryList from 'react-select-country-list'
 const Shipping = () => {
     const navigate = useNavigate();
-    const [name, setName] = useState("");
-    const [surname, setSurname] = useState("");
-    const [number, setNumber] = useState("");
-    const [email, setEmail] = useState("");
-    const [state, setState] = useState("");
-    const [result, setResult] = useState("");
-    const [zip, setZip] = useState("");
-    const [city, setCity] = useState("");
-    const [adress, setAdress] = useState("");
-    const options = useMemo(() => countryList().getData(), [])
-    const handleSumbit = (e) => {
+    const name = useRef(localStorage.getItem("name") || null);
+    const number = useRef(null);
+    const email = useRef(null);
+    const state = useRef(null);
+    const zip = useRef(null);
+    const city = useRef(null);
+    const address = useRef(null);
+    const usStates = [
+        'Alabama',
+        'Alaska',
+        'Arizona',
+        'Arkansas',
+        'California',
+        'Colorado',
+        'Connecticut',
+        'Delaware',
+        'Florida',
+        'Georgia',
+        'Hawaii',
+        'Idaho',
+        'Illinois',
+        'Indiana',
+        'Iowa',
+        'Kansas',
+        'Kentucky',
+        'Louisiana',
+        'Maine',
+        'Maryland',
+        'Massachusetts',
+        'Michigan',
+        'Minnesota',
+        'Mississippi',
+        'Missouri',
+        'Montana',
+        'Nebraska',
+        'Nevada',
+        'New Hampshire',
+        'New Jersey',
+        'New Mexico',
+        'New York',
+        'North Carolina',
+        'North Dakota',
+        'Ohio',
+        'Oklahoma',
+        'Oregon',
+        'Pennsylvania',
+        'Rhode Island',
+        'South Carolina',
+        'South Dakota',
+        'Tennessee',
+        'Texas',
+        'Utah',
+        'Vermont',
+        'Virginia',
+        'Washington',
+        'West Virginia',
+        'Wisconsin',
+        'Wyoming',
+    ];
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const form = $(e.target);
-        $.ajax({
-            type: "POST",
-            url: form.attr("action"),
-            data: form.serialize(),
-            success(data) {
-                setResult(data);
-            },
-        });
+        localStorage.setItem("name", name.current.value);
+        localStorage.setItem("email", email.current.value);
+        localStorage.setItem("zip", zip.current.value);
+        localStorage.setItem("address", address.current.value);
+        localStorage.setItem("phoneNumber", number.current.value);
+        localStorage.setItem("city", city.current.value);
+        localStorage.setItem("state", state.current.value);
+        navigate('/checkoutpage');
     };
-    const handleClick = () => {
-        navigate("/checkoutpage");
-    }
-
     return (
         <div className="App">
-            <header />
             <section className="shippingSection">
+                <img src="glissProfess.png" alt="no glissProfess" className="shippingGliss" />
+                <span className="billing-info">BILLING INFORMATION</span>
                 <form
                     action="http://localhost:8000/server.php"
                     method="post"
-                    onSubmit={(event) => handleSumbit(event)}
+                    onSubmit={handleSubmit}
                     className="shippingForm"
                 >
-                    <span className="billing-info">BILLING INFORMATION</span>
                     <div className="col">
 
                         <div className="row">
-                            <span>Name: </span>
                             <input
                                 type="text"
                                 id="name"
                                 name="name"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
+                                ref={name}
+                                placeholder="Full name"
+                                required
                             />
-                            <span>Surname: </span>
-                            <input
-                                type="text"
-                                id="surname"
-                                name="surname"
-                                value={surname}
-                                onChange={(e) => setSurname(e.target.value)}
-                            />
-                        </div>
-                        <div className="row phone-number">
-                            <span className="pn">Tel. : </span>
-                            <input
-                                type="text"
-                                id="number"
-                                name="number"
-                                value={number}
-                                onChange={(e) => setNumber(e.target.value)}
-                            />
-                        </div>
-                        <div className="row email">
-                            <span>Email: </span>
                             <input
                                 type="email"
                                 id="email"
                                 name="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="Email"
+                                ref={email}
+                                required
                             />
                         </div>
-                        <div className="row city-adress">
 
-                            <span>City: </span>
+                        <div className="row">
                             <input
-                                type="city"
+                                type="text"
+                                id="number"
+                                name="number"
+                                placeholder="Phone number"
+                                ref={number}
+                                required
+                            />
+                            <input
+                                type="text"
                                 id="city"
                                 name="city"
-                                value={city}
-                                onChange={(e) => setCity(e.target.value)}
+                                placeholder="City"
+                                ref={city}
+                                required
                             />
-                            <span>Adress: </span>
+                        </div>
+                        <div className="row">
                             <input
                                 type="adress"
                                 id="adress"
                                 name="adress"
-                                value={adress}
-                                onChange={(e) => setAdress(e.target.value)}
+                                className="adress"
+                                placeholder="Adress"
+                                ref={address}
+                                required
                             />
-                        </div>
-                        <div className="row zip-state">
-                            <span>ZIP Code: </span>
                             <input
-                                type="zip"
+                                type="number"
                                 id="zip"
                                 name="zip"
-                                value={zip}
-                                onChange={(e) => setZip(e.target.value)}
+                                className="zip"
+                                placeholder="ZIP"
+                                ref={zip}
+                                required
                             />
-                            <span>State: </span>
-                            <Dropdown options={options} onChange={() => setState(state)} value={state} placeholder="Select a state" />
+                            <select
+                                required
+                                className="states"
+                                ref={state}
+                            >
+                                {usStates.map((states) => (
+                                    <option key={states} value={states}>
+                                        {states}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
 
                     </div>
-                    <button type="submit" onClick={handleClick}></button>
+                    <button type="submit" className="aquaShipping">Submit</button>
                 </form>
-                <img src="glissProfess.png" alt="no glissProfess" className="shippingGliss" />
-                <h1 style={{ color: "red" }}>{result}</h1>
             </section>
             <footer className="productFooter">
                 <div className="footerInfoLeft">

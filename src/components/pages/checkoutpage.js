@@ -1,127 +1,146 @@
-import { useState, useMemo } from "react";
+import { useState, useRef } from "react";
 import $ from "jquery";
-import '../../App.css';
-import Dropdown from 'react-dropdown';
+import '../css/checkout.css';
 import { useNavigate } from "react-router-dom";
-// import 'react-dropdown/style.css';
-import "./dropDown.css"
-import countryList from 'react-select-country-list'
-const Checkout = () => {
+import { useForm } from "react-hook-form";
+const Shipping = () => {
     const navigate = useNavigate();
-    const [name, setName] = useState("");
-    const [surname, setSurname] = useState("");
-    const [number, setNumber] = useState("");
-    const [email, setEmail] = useState("");
-    const [state, setState] = useState("");
-    const [result, setResult] = useState("");
-    const [zip, setZip] = useState("");
-    const [city, setCity] = useState("");
-    const [adress, setAdress] = useState("");
-    const options = useMemo(() => countryList().getData(), [])
-    const handleSumbit = (e) => {
-        e.preventDefault();
-        const form = $(e.target);
-        $.ajax({
-            type: "POST",
-            url: form.attr("action"),
-            data: form.serialize(),
-            success(data) {
-                setResult(data);
-            },
-        });
-    };
-    const handleClick = () => {
-        navigate("/checkoutpage");
+    const cardName = useRef(null);
+    const cardNumber = useRef(null);
+    const selectedMonth = useRef(null);
+    const selectedYear = useRef(null);
+    const cvv = useRef(null);
+    const years = [];
+    const currentYear = new Date().getFullYear();
+    for (let i = 0; i <= 15; i++) {
+        years.push(currentYear + i);
     }
+    function formatCardNumber(value) {
+        const cleanValue = value.replace(/\D/g, '');
+        const truncatedValue = cleanValue.substring(0, 16);
+        const match = truncatedValue.match(/^(\d{1,4})(\d{1,4})?(\d{1,4})?(\d{1,4})?$/);
+        const formattedValue = match ? match.slice(1).filter(Boolean).join(' ') : '';
+        return formattedValue;
+    }
+    const putCardNumber = (e) => {
+        const formatted = formatCardNumber(e.target.value);
+        e.target.value = formatted;
+    }
+
+    const handleInputChange = (event) => {
+        const inputValue = event.target.value;
+        const numericValue = inputValue.replace(/\D/g, "");
+        const maxLength = 3;
+        const limitedValue = numericValue.slice(0, maxLength);
+        event.target.value = limitedValue;
+    };
+    const months = [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12"
+    ];
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        formData.append('cardName', cardName.current.value);
+        formData.append('cardNumber', cardNumber.current.value);
+        formData.append('cardMonth', selectedMonth.current.value);
+        formData.append('cardYear', selectedYear.current.value);
+        formData.append('cardCVV', cvv.current.value);
+
+        fetch('http://localhost:8000/server.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        navigate('/thankyoupage');
+    };
 
     return (
         <div className="App">
-            <header />
+            {/* <header /> */}
             <section className="shippingSection">
-                <form
-                    action="http://localhost:8000/server.php"
-                    method="post"
-                    onSubmit={(event) => handleSumbit(event)}
-                    className="shippingForm"
-                >
-                    <span className="billing-info">PAYMENT INFORMATION</span>
-                    <div className="col">
-
-                        <div className="row">
-                            <span>Name: </span>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                            />
-                            <span>Surname: </span>
-                            <input
-                                type="text"
-                                id="surname"
-                                name="surname"
-                                value={surname}
-                                onChange={(e) => setSurname(e.target.value)}
-                            />
-                        </div>
-                        <div className="row phone-number">
-                            <span className="pn">Tel. : </span>
-                            <input
-                                type="text"
-                                id="number"
-                                name="number"
-                                value={number}
-                                onChange={(e) => setNumber(e.target.value)}
-                            />
-                        </div>
-                        <div className="row email">
-                            <span>Email: </span>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </div>
-                        <div className="row city-adress">
-
-                            <span>City: </span>
-                            <input
-                                type="city"
-                                id="city"
-                                name="city"
-                                value={city}
-                                onChange={(e) => setCity(e.target.value)}
-                            />
-                            <span>Adress: </span>
-                            <input
-                                type="adress"
-                                id="adress"
-                                name="adress"
-                                value={adress}
-                                onChange={(e) => setAdress(e.target.value)}
-                            />
-                        </div>
-                        <div className="row zip-state">
-                            <span>ZIP Code: </span>
-                            <input
-                                type="zip"
-                                id="zip"
-                                name="zip"
-                                value={zip}
-                                onChange={(e) => setZip(e.target.value)}
-                            />
-                            <span>State: </span>
-                            <Dropdown options={options} onChange={() => setState(state)} value={state} placeholder="Select a state" />
-                        </div>
-
-                    </div>
-                    <button type="submit" onClick={handleClick}></button>
-                </form>
                 <img src="glissProfess.png" alt="no glissProfess" className="shippingGliss" />
-                <h1 style={{ color: "red" }}>{result}</h1>
+                <span className="billing-info">CARD INFORMATION</span>
+                <form onSubmit={handleSubmit} className="checkoutForm">
+                    <div className="checkOutcol">
+                        <div className="checkOutrow">
+                            <input
+                                type="text"
+                                placeholder="Name on card"
+                                className="card"
+                                ref={cardName}
+                                required
+                            />
+                        </div>
+                        <div className="checkOutrow">
+                            <input
+                                type="cardNumber"
+                                className="card"
+                                ref={cardNumber}
+                                onChange={putCardNumber}
+                                placeholder="Card Number (V , M , AE)"
+                                required
+                            />
+                        </div>
+                        <div className="checkOutrow">
+                            <span>Expiration Month</span>
+                            <select
+                                className="months"
+                                required
+                                ref={selectedMonth}
+                            >
+                                {months.map((month) => (
+                                    <option key={month} value={month}>
+                                        {month}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="checkOutrow">
+                            <span>Expiration Year</span>
+                            <select
+                                className="year"
+                                required
+                                ref={selectedYear}
+                            >
+                                {years.map((year) => (
+                                    <option key={year} value={year}>
+                                        {year}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="checkOutrow">
+                            <input
+                                type="tel"
+                                ref={cvv}
+                                className="cvv"
+                                onChange={handleInputChange}
+                                placeholder="CVV"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <button type="submit" className="aquaShipping">Checkout</button>
+                </form>
             </section>
             <footer className="productFooter">
                 <div className="footerInfoLeft">
@@ -151,4 +170,4 @@ const Checkout = () => {
     );
 }
 
-export default Checkout;
+export default Shipping;

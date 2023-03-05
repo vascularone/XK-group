@@ -109,8 +109,8 @@ const Landing = () => {
                     {/* <img src="glissProfess.png" alt="gliss missing"></img> */}
                 </div>
                 <div className="footerInfoRight">
-                    <a href="#">PRIVACY POLICY  /</a>
-                    <a href="#">\ TERMS & CONDITIONS</a>
+                    <a href="#">PRIVACY POLICY  </a>
+                    <a href="#"> TERMS & CONDITIONS</a>
                 </div>
             </footer>
         </div>

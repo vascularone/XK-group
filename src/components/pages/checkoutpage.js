@@ -1,8 +1,6 @@
-import { useState, useRef } from "react";
-import $ from "jquery";
+import { useRef, useState } from "react";
 import '../css/checkout.css';
 import { useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
 const Shipping = () => {
     const navigate = useNavigate();
     const cardName = useRef(null);
@@ -10,6 +8,25 @@ const Shipping = () => {
     const selectedMonth = useRef(null);
     const selectedYear = useRef(null);
     const cvv = useRef(null);
+    const [cardNumberValidation, setCardNumberValidation] = useState('');
+    const [cardCVVValidation, setCardCVVValidation] = useState('');
+    const [expMonth, setExpMonth] = useState('');
+    const [expYear, setExpYear] = useState('');
+    const [expError, setExpError] = useState('');
+    const months = [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12"
+    ];
     const years = [];
     const currentYear = new Date().getFullYear();
     for (let i = 0; i <= 15; i++) {
@@ -25,57 +42,95 @@ const Shipping = () => {
     const putCardNumber = (e) => {
         const formatted = formatCardNumber(e.target.value);
         e.target.value = formatted;
+        const value = e.target.value.replace(/\s/g, '');
+        const validation = validateCardNumber(value);
+        console.log(e.target.value);
+        setCardNumberValidation(validation);
     }
 
-    const handleInputChange = (event) => {
+    const handleCVVChange = (event) => {
         const inputValue = event.target.value;
         const numericValue = inputValue.replace(/\D/g, "");
-        const maxLength = 3;
+        const maxLength = 4;
         const limitedValue = numericValue.slice(0, maxLength);
+        const validation = validateCVV(limitedValue);
         event.target.value = limitedValue;
+        setCardCVVValidation(validation);
     };
-    const months = [
-        "01",
-        "02",
-        "03",
-        "04",
-        "05",
-        "06",
-        "07",
-        "08",
-        "09",
-        "10",
-        "11",
-        "12"
-    ];
 
+    function validateExpDate(expMonth, expYear) {
+        const currentYear = new Date().getFullYear();
+        const currentMonth = new Date().getMonth() + 1;
+        if (expMonth > currentMonth || expYear > currentYear) {
+            return '';
+        } else {
+            return 'Expired';
+        }
+    }
+
+    function validateCardNumber(cardNumber) {
+        const visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+        const mastercardRegEx = /^(?:5[1-5][0-9]{14})$/;
+        const amexRegEx = /^(?:3[47][0-9]{13})$/;
+
+        if (visaRegEx.test(cardNumber)) {
+            return 'visa';
+        } else if (mastercardRegEx.test(cardNumber)) {
+            return 'mastercard';
+        } else if (amexRegEx.test(cardNumber)) {
+            return 'amex';
+        } else {
+            return 'Invalid card number';
+        }
+    }
+    function validateCVV(cvv) {
+        const cvvReg = /^[0-9]{3,4}$/;
+        if (cvvReg.test(cvv))
+            return "";
+        else
+            return "Invalid CVV";
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         formData.append('cardName', cardName.current.value);
-        formData.append('cardNumber', cardNumber.current.value);
+        const cardNumberValue = cardNumber.current.value.replace(/\s/g, '');
+        formData.append('cardNumber', cardNumberValue);
         formData.append('cardMonth', selectedMonth.current.value);
         formData.append('cardYear', selectedYear.current.value);
         formData.append('cardCVV', cvv.current.value);
-
+        formData.append('name', localStorage.getItem('name'));
+        const expValidation = validateExpDate(expMonth, expYear);
+        setExpError(expValidation);
         fetch('http://localhost:8000/server.php', {
             method: 'POST',
             body: formData
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                if (data.errors) {
+                    console.log(data.errors.cardNumber);
+                    console.log(data.errors.cvv);
+                    setCardNumberValidation(data.errors.cardNumber || '');
+                    setCardCVVValidation(data.errors.cvv || '');
+                    setExpError(data.errors.expCard || '');
+                }
+                else {
+                    console.log(cardNumber.current.value.replaceAll(" ", ""));
+                    console.log(validateCardNumber(cardNumber.current.value.replaceAll(" ", "")));
+                    // Success, redirect to thank you page
+                    navigate('/thankyoupage');
+                }
             })
             .catch(error => {
                 console.error(error);
+
             });
-        navigate('/thankyoupage');
     };
 
     return (
         <div className="App">
-            {/* <header /> */}
             <section className="shippingSection">
                 <img src="glissProfess.png" alt="no glissProfess" className="shippingGliss" />
                 <span className="billing-info">CARD INFORMATION</span>
@@ -99,6 +154,7 @@ const Shipping = () => {
                                 placeholder="Card Number (V , M , AE)"
                                 required
                             />
+                            <span>{cardNumberValidation}</span>
                         </div>
                         <div className="checkOutrow">
                             <span>Expiration Month</span>
@@ -106,6 +162,7 @@ const Shipping = () => {
                                 className="months"
                                 required
                                 ref={selectedMonth}
+                                onChange={(e) => setExpMonth(e.target.value)}
                             >
                                 {months.map((month) => (
                                     <option key={month} value={month}>
@@ -120,6 +177,7 @@ const Shipping = () => {
                                 className="year"
                                 required
                                 ref={selectedYear}
+                                onChange={(e) => setExpYear(e.target.value)}
                             >
                                 {years.map((year) => (
                                     <option key={year} value={year}>
@@ -127,16 +185,18 @@ const Shipping = () => {
                                     </option>
                                 ))}
                             </select>
+                            <span>{expError}</span>
                         </div>
                         <div className="checkOutrow">
                             <input
                                 type="tel"
                                 ref={cvv}
                                 className="cvv"
-                                onChange={handleInputChange}
+                                onChange={handleCVVChange}
                                 placeholder="CVV"
                                 required
                             />
+                            <span>{cardCVVValidation}</span>
                         </div>
                     </div>
                     <button type="submit" className="aquaShipping">Checkout</button>

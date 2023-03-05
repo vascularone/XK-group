@@ -2,14 +2,6 @@ header {
     height:10vh;
     background: rgba(56,119,161,1);
   }
-  .shippingSection {
-      height:83.3vh;
-      background: white;
-      display: flex;
-      flex-direction:column;
-     justify-content: center;
-      align-items: center;
-    }
     .checkoutForm {
       position:relative;
       width:fit-content;

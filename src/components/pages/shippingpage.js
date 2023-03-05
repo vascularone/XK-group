@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import $ from "jquery";
+import { useRef } from "react";
 import '../css/shipping.css';
 import { useNavigate } from "react-router-dom";
 import "./dropDown.css"

@@ -1,32 +1,16 @@
 import { useState } from "react";
-import $ from "jquery";
 import "../css/productCSS.css";
+import { useNavigate } from 'react-router-dom';
 const Conditioner = () => {
-    const [name, setName] = useState("");
-    const [result, setResult] = useState("");
-
-    const handleChange = (e) => {
-        setName(e.target.value);
-    };
-
-    const handleSumbit = (e) => {
-        e.preventDefault();
-        const form = $(e.target);
-        $.ajax({
-            type: "POST",
-            url: form.attr("action"),
-            data: form.serialize(),
-            success(data) {
-                setResult(data);
-            },
-        });
-    };
+    const navigate = useNavigate();
     const [toggle, setToggle] = useState(false);
     const [toggle2, setToggle2] = useState(true);
-
+    const handleClick = () => {
+        localStorage.setItem("price", 600);
+        navigate("/shippingpage");
+    }
     return (
         <div>
-            <header />
             <section className="shampooSection conditionerSection">
                 <div className="shampooDetails conditionerDetails">
                     <span className="shampooTitle">Aqua Revive Conditioner</span>
@@ -38,7 +22,7 @@ const Conditioner = () => {
                         <li className="shampooDescription3">Natural ingredients: 90% ingredients of natural origin (including water)</li>
                     </ul>
                     <div className="shippingbuttons">
-                        <button className="buyButton">Buy Aqua Revive Conditioner</button>
+                        <button className="buyButton" onClick={handleClick}>Buy Aqua Revive Conditioner</button>
                         {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2) }}>
                             <span>Ingredients</span>
                         </button>)}
@@ -48,7 +32,8 @@ const Conditioner = () => {
                         </div>)}
                     </div>
                 </div>
-            </section>
+                <img src="conditionerSplash3.png" alt="noaquaSplash" className="shampooProduct conditionerProduct" />
+            </section >
 
             <footer className="productFooter">
                 <div className="footerInfoLeft">
@@ -67,31 +52,13 @@ const Conditioner = () => {
                 </div>
                 <div className="glissFooter">
                     <span>© Schwarzkopf Gliss Professional</span>
-                    {/* <img src="glissProfess.png" alt="gliss missing"></img> */}
                 </div>
                 <div className="footerInfoRight">
                     <a href="#">PRIVACY POLICY  </a>
                     <a href="#"> TERMS & CONDITIONS</a>
                 </div>
             </footer>
-            {/* <form
-                action="http://localhost:8000/server.php"
-                method="post"
-                onSubmit={(event) => handleSumbit(event)}
-            >
-                <label htmlFor="name">Name: </label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={name}
-                    onChange={(event) => handleChange(event)}
-                />
-                <br />
-                <button type="submit">Submit</button>
-            </form>
-            <h1>{result}</h1> */}
-        </div>
+        </div >
     );
 }
 

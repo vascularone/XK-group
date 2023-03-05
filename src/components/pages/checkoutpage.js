@@ -44,7 +44,6 @@ const Shipping = () => {
         e.target.value = formatted;
         const value = e.target.value.replace(/\s/g, '');
         const validation = validateCardNumber(value);
-        console.log(e.target.value);
         setCardNumberValidation(validation);
     }
 
@@ -95,8 +94,7 @@ const Shipping = () => {
         const form = e.target;
         const formData = new FormData(form);
         formData.append('cardName', cardName.current.value);
-        const cardNumberValue = cardNumber.current.value.replace(/\s/g, '');
-        formData.append('cardNumber', cardNumberValue);
+        formData.append('cardNumber', cardNumber.current.value.replace(/\s/g, ''));
         formData.append('cardMonth', selectedMonth.current.value);
         formData.append('cardYear', selectedYear.current.value);
         formData.append('cardCVV', cvv.current.value);
@@ -110,16 +108,11 @@ const Shipping = () => {
             .then(response => response.json())
             .then(data => {
                 if (data.errors) {
-                    console.log(data.errors.cardNumber);
-                    console.log(data.errors.cvv);
                     setCardNumberValidation(data.errors.cardNumber || '');
                     setCardCVVValidation(data.errors.cvv || '');
                     setExpError(data.errors.expCard || '');
                 }
                 else {
-                    console.log(cardNumber.current.value.replaceAll(" ", ""));
-                    console.log(validateCardNumber(cardNumber.current.value.replaceAll(" ", "")));
-                    // Success, redirect to thank you page
                     navigate('/thankyoupage');
                 }
             })
@@ -154,7 +147,7 @@ const Shipping = () => {
                                 placeholder="Card Number (V , M , AE)"
                                 required
                             />
-                            <span>{cardNumberValidation}</span>
+                            <span className="error-class">{cardNumberValidation}</span>
                         </div>
                         <div className="checkOutrow">
                             <span>Expiration Month</span>
@@ -185,7 +178,7 @@ const Shipping = () => {
                                     </option>
                                 ))}
                             </select>
-                            <span>{expError}</span>
+                            <span className="error-class">{expError}</span>
                         </div>
                         <div className="checkOutrow">
                             <input
@@ -196,7 +189,7 @@ const Shipping = () => {
                                 placeholder="CVV"
                                 required
                             />
-                            <span>{cardCVVValidation}</span>
+                            <span className="error-class">{cardCVVValidation}</span>
                         </div>
                     </div>
                     <button type="submit" className="aquaShipping">Checkout</button>

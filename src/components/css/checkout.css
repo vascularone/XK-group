@@ -56,8 +56,3 @@ header {
   form .cvv {
     width:10rem;
   }
-  .error-message {
-    color: red;
-    font-size: 14px;
-  }
-  

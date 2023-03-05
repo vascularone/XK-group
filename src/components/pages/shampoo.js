@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../css/productCSS.css";
 import { useNavigate } from 'react-router-dom';
 const Shampoo = () => {
+    localStorage.setItem("price", 500);
     const navigate = useNavigate();
     const [toggle, setToggle] = useState(false);
     const [toggle2, setToggle2] = useState(true);

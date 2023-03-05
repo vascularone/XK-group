@@ -1,33 +1,17 @@
 import { useState } from "react";
-import $ from "jquery";
 import { useNavigate } from 'react-router-dom';
 import "../css/productCSS.css";
 const Spray = () => {
-    const [name, setName] = useState("");
-    const [result, setResult] = useState("");
-
-    const handleChange = (e) => {
-        setName(e.target.value);
-    };
-
-    const handleSumbit = (e) => {
-        e.preventDefault();
-        const form = $(e.target);
-        $.ajax({
-            type: "POST",
-            url: form.attr("action"),
-            data: form.serialize(),
-            success(data) {
-                setResult(data);
-            },
-        });
-    };
+    const navigate = useNavigate();
+    const handleClick = () => {
+        localStorage.setItem("price", 400);
+        navigate("/shippingpage");
+    }
     const [toggle, setToggle] = useState(false);
     const [toggle2, setToggle2] = useState(true);
 
     return (
         <div>
-            <header className="shampooHeader" />
             <section className="shampooSection">
                 <div className="shampooDetails expressDetails">
                     <span className="shampooTitle">Aqua Revive Express</span>
@@ -39,7 +23,7 @@ const Spray = () => {
                         <li className="shampooDescription3">Natural ingredients: 90% ingredients of natural origin (including water)</li>
                     </ul>
                     <div className="shippingbuttons">
-                        <button className="buyButton">Buy Aqua Revive Express</button>
+                        <button className="buyButton" onClick={handleClick}>Buy Aqua Revive Express</button>
                         {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2) }}>
                             <span>Ingredients</span>
                         </button>)}
@@ -49,6 +33,7 @@ const Spray = () => {
                         </div>)}
                     </div>
                 </div>
+                <img src="aquaSpray.png" alt="noaquaSplash" className="shampooProduct" />
             </section>
             <footer className="productFooter">
                 <div className="footerInfoLeft">

@@ -110,6 +110,9 @@ ul li {
     width:600px;
     height:600px;
 }
+.shampooSection .conditionerProduct {
+    right:5rem;
+}
 .hiddenShampoo {
     display:none;
 }
@@ -148,7 +151,7 @@ ul li {
     }
     .shampooDescription2 {
         width:40vw;
-        font-size:20px
+        font-size:20px;
     }
     .shampooDescription3 {
         width:30vw;
@@ -156,6 +159,9 @@ ul li {
     }
     .shampooProduct {
         right:2rem;
+    }
+    .shampooSection .conditionerProduct {
+        right:0rem;
     }
 
 }
@@ -167,14 +173,21 @@ ul li {
         right:0rem;
         /* top:6rem; */
     }
+    .shampooSection .conditionerProduct {
+        width:450px;
+        height:450px;
+    }
     .shampooDetails {
         left:5rem;
+    }
+    .shampooDescription2 {
+        font-size:18px;
     }
     .shampooSection {
         /* height:80vh; */
     }
     .shampooTitle {
-        font-size:60px;
+        font-size:50px;
     }
 }
 @media screen and (max-width:800px)
@@ -186,6 +199,7 @@ ul li {
     .shampooDetails {
         width:85vw;
         left:2rem;
+        top:8rem;
     }
     .shampooSection {
         height:85.3vh;
@@ -195,18 +209,18 @@ ul li {
     }
     .shampooDescription2  {
         width:fit-content;
-        font-size:23px;
+        font-size:20px;
     }
     .shampooDescription3 {
         width:fit-content;
         font-size:18px;
     }
     .shippingbuttons {
-        gap:1rem;
-        flex-direction:column;
+        /* gap:1rem; */
+        /* flex-direction:column; */
     }
 }
-@media screen and (max-width:600px)
+@media (min-width:425px) and (max-width:600px)
 {
     .shampooTitle {
         font-size:45px;
@@ -217,17 +231,27 @@ ul li {
     .shampooDescription3 {
         font-size:15px;
     }
+    .shippingButtons {
+        height:2rem;
+    }
+    .ingredientButton, .buyButton , .closeIngredients {
+        height:2.5rem;
+        font-size:13px;
+    }
 }
-@media screen and (max-width:375px) 
+@media (max-width:424px) 
 {
+    .shampooTitle {
+        font-size:15vw;
+    }
     .shampooDescription2 {
-        font-size:17px;
+        font-size:4vw;
     }
     .shampooDescription3 {
-        font-size:12px;
+        font-size:3vw;
     }
     .buyButton, .ingredientButton {
-        font-size:4vw;
+        font-size:3vw;
         height:2.5rem;
     }
     .buyButton {

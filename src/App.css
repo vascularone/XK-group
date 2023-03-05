@@ -497,7 +497,7 @@ footer .footerInfoRight a {
   .aquaShampoo {
     width:320px;
     height:320px;
-    top:15rem;
+    top:12rem;
     left:15vw;
   }
   .secondSection .conditionerDescription
@@ -520,7 +520,7 @@ footer .footerInfoRight a {
     width:330px;
     height:330px;
     right:-20vw;
-    top:-7rem;
+    top:-5rem;
   }
   .aquaSpray {
     width:250px;
@@ -528,7 +528,7 @@ footer .footerInfoRight a {
     top:15.5rem;
   }
   .thirdSection .sprayDescription {
-    width:20rem;
+    width:80vw;
     right:0rem;
     left:4rem;
     top:6rem;
@@ -576,7 +576,7 @@ footer .footerInfoRight a {
   {
     width:80vw;
     right:0rem;
-    left:4rem;
+    left:8vw;
     height:fit-content;
     top:-3rem;
   }
@@ -586,16 +586,16 @@ footer .footerInfoRight a {
     bottom:20rem;
   }
   .aquaShampoo {
-    width:320px;
-    height:320px;
-    top:15rem;
-    left:15vw;
+    width:300px;
+    height:300px;
+    top:13rem;
+    left:6vw;
   }
   .secondSection .conditionerDescription
   {
     width:80vw;
-    top:9rem;
-    left:4rem;
+    top:7rem;
+    left:10vw;;
   }
   .conditionerDescription .secondaryText 
   {
@@ -608,18 +608,19 @@ footer .footerInfoRight a {
     top:17rem;
   }
   .aquaConditioner {
-    width:330px;
-    height:330px;
-    right:-20vw;
+    width:270px;
+    height:270px;
+    right:-12vw;
     top:-7rem;
   }
   .aquaSpray {
     width:250px;
     height:250px;
     top:15.5rem;
+    left:3rem;
   }
   .thirdSection .sprayDescription {
-    width:20rem;
+    width:70vw;
     right:0rem;
     left:4rem;
     top:6rem;

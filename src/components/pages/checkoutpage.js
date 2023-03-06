@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import '../css/checkout.css';
 import { useNavigate } from "react-router-dom";
-const Shipping = () => {
+const Checkout = () => {
     const navigate = useNavigate();
     const cardName = useRef(null);
     const cardNumber = useRef(null);
@@ -99,13 +99,14 @@ const Shipping = () => {
         formData.append('cardYear', selectedYear.current.value);
         formData.append('cardCVV', cvv.current.value);
         formData.append('name', localStorage.getItem('name'));
+        formData.append('email', localStorage.getItem('email'));
+        formData.append('state', localStorage.getItem('state'));
+        formData.append('city', localStorage.getItem('city'));
+        formData.append('zip', localStorage.getItem('zip'));
+        formData.append('phoneNumber', localStorage.getItem('phoneNumber'));
+        formData.append('address', localStorage.getItem('address'));
+
         const expValidation = validateExpDate(expMonth, expYear);
-
-        const cardObject = {
-            cardName: cardName?.current?.value
-        }
-
-        localStorage.setItem("cardObject", JSON.stringify(cardObject))
 
         setExpError(expValidation);
         fetch('http://localhost:8000/server.php', {
@@ -232,4 +233,4 @@ const Shipping = () => {
     );
 }
 
-export default Shipping;
+export default Checkout;

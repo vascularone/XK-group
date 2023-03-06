@@ -25,7 +25,7 @@ const Shampoo = () => {
                     </ul>
                     <div className="shippingbuttons">
                         <button className="buyButton" onClick={handleClick}>Buy Aqua Revive Shampoo</button>
-                        {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2) }}>
+                        {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2); }}>
                             <span>Ingredients</span>
                         </button>)}
                         {toggle && (<div className="ingredients">

@@ -48,7 +48,7 @@ const Landing = () => {
                 }>
                     <span className="secondaryText">
                         <strong>Schwarzkopf Gliss Aqua Revive</strong> moisturizes and visibly improves the quality of your hair, without weighing it down!</span>
-                    <button onClick={handleShampooClick} className="aquaCheckout"><span>Buy Aqua Revive Shampoo</span></button>
+                    <button onClick={handleShampooClick} className="aquaCheckout"><span>Buy Aqua Revive Shampoo 5$</span></button>
                 </div>
             </section>
 
@@ -61,7 +61,7 @@ const Landing = () => {
                 }>
                     <span className="secondaryText">
                         <strong>The Aqua Revive</strong> product line was created to emphasize the beauty and answer all the needs of dry and normal hair.</span>
-                    <button onClick={handleConditionerClick} className="aquaCheckout"><span>Buy Aqua Revive Conditioner</span></button>
+                    <button onClick={handleConditionerClick} className="aquaCheckout"><span>Buy Aqua Revive Conditioner 8$</span></button>
                 </div>
                 <img src="conditionerSplash3.png" alt="aqua not responding" className="aquaConditioner" ref={ref2} style={
                     {
@@ -86,7 +86,7 @@ const Landing = () => {
                 }>
                     <span className="secondaryText">
                         A rich yet light formula with a complex of <strong>hyaluronic acid</strong> and <strong>sea algae</strong> for a feeling of hydration and shine.</span>
-                    <button onClick={handleSprayClick} className="aquaCheckout"><span>Buy Aqua Revive Express</span></button>
+                    <button onClick={handleSprayClick} className="aquaCheckout"><span>Buy Aqua Revive Express 4$</span></button>
                 </div>
             </section>
             <footer>

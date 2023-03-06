@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import '../css/shipping.css';
 import { useNavigate } from "react-router-dom";
 import "./dropDown.css"
@@ -11,6 +11,31 @@ const Shipping = () => {
     const zip = useRef(null);
     const city = useRef(null);
     const address = useRef(null);
+    const [valid, setValid] = useState(false);
+    function validatePhoneNumber(number) {
+        // Regular expression to match US phone numbers
+        const phoneRegex = /^\+?1?\-?\(?\d{3}\)?[\- ]?\d{3}[\- ]?\d{4}$/;
+
+        // Remove all non-digit characters from the input
+        if (phoneRegex.test(number))
+            return "";
+
+        return "Not valid";
+    }
+    const handlePhoneChange = (event) => {
+        const inputValue = event.target.value;
+        let numericValue = inputValue.replace(/\D/g, "");
+        let maxLength = 10;
+        if (numericValue.startsWith("1")) {
+            numericValue = `+1${numericValue.slice(1)}`;
+            maxLength += 1; // Increase the maximum length to 11
+        }
+        const limitedValue = numericValue.slice(0, maxLength);
+        const validation = validatePhoneNumber(limitedValue);
+        const formattedValue = limitedValue.replace(/^(\d{3})(\d{3})(\d{4})$/, "($1) $2-$3");
+        event.target.value = formattedValue;
+        setValid(validation)
+    }
     const usStates = [
         'Alabama',
         'Alaska',
@@ -107,14 +132,17 @@ const Shipping = () => {
                         </div>
 
                         <div className="row">
-                            <input
-                                type="text"
-                                id="number"
-                                name="number"
-                                placeholder="Phone number"
-                                ref={number}
-                                required
-                            />
+                            <div className="row">
+                                {valid}
+                                <input
+                                    type="tel"
+                                    id="number"
+                                    name="number"
+                                    placeholder="Phone number (XXX) XXX-XXXX"
+                                    ref={number}
+                                    required
+                                    onChange={handlePhoneChange}
+                                /></div>
                             <input
                                 type="text"
                                 id="city"

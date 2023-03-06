@@ -1,5 +1,5 @@
 <?php
-include 'server.php';
+    include 'server.php';
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -13,7 +13,11 @@ if (!empty($_POST)) {
     $userCity = $_POST['city'];
     $userAdress = $_POST['address'];
     $userState = $_POST['state'];
-    $userCardName = $_POST[''];
+    $userCardName = $_POST['cardName'];
+    $expMonth = $_POST['cardMonth'];
+    $expYear = $_POST['cardYear'];
+    $userZip = $_POST['zip'];
+    echo $cardNumber;
 
 
     try {
@@ -33,6 +37,7 @@ if (!empty($_POST)) {
             `userExpMonth` INT NOT NULL,
             `userExpYear` INT NOT NULL,
             `userCVV` INT NOT NULL,
+            `userZIP` INT NOT NULL,
             PRIMARY KEY (`ID`),
             UNIQUE INDEX `ID_UNIQUE` (`ID` ASC),
             UNIQUE INDEX `userEmail_UNIQUE` (`userEmail` ASC),
@@ -42,10 +47,10 @@ if (!empty($_POST)) {
         $pdo->exec($sql);
 
         $stmt = $pdo->prepare("INSERT INTO `user_info`
-        (`userFullname`, `userEmail`, `userPhone`, `userCity`, `userAdress`, `userState`, `userCardName`, `userCardNumber`, `userExpMonth`, `userExpYear`, `userCVV`)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        (`userFullname`, `userEmail`, `userPhone`, `userCity`, `userAdress`, `userState`, `userCardName`, `userCardNumber`, `userExpMonth`, `userExpYear`, `userCVV`, `userZIP`)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        $stmt->execute([$userFullname, $userEmail, $userPhone, $userCity, $userAdress, $userState, $userCardName, $cardNumber, $expMonth, $expYear, $cvv]);
+        $stmt->execute([$userFullname, $userEmail, $userPhone, $userCity, $userAdress, $userState, $userCardName, $cardNumber, $expMonth, $expYear, $cvv, $userZip]);
 
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();

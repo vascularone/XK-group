@@ -15,7 +15,6 @@ body {
   height:4rem;
   color:rgba(56,119,161,1);
   transition:all 0.5s;
-  animation:moveButton 400ms;
   width:20rem;
 }
 .navbar {
@@ -30,7 +29,6 @@ body {
   bottom:2vw;
   height:27vw;
   width:27vw;
-  animation:moveButton 300ms;
   border-bottom:5px solid rgba(56,119,161,1);
 }
 .navbar-text {
@@ -41,7 +39,6 @@ body {
   left:12vw;
   color:rgba(56,119,161,1);
   width:fit-content;
-  animation:moveButton 300ms;
   top:2.27rem;
 }
 .navbar-text .columnText {
@@ -57,7 +54,6 @@ body {
 .gliss {
   position:relative;
   width:400px;
-  animation:moveButton 300ms;
   height:400px;
   right:4.5rem;
   bottom:1rem;
@@ -65,14 +61,12 @@ body {
 .primaryText {
   width:15rem;
   font-size:50px;
-  animation:moveButton 300ms;
   font-family:'Rubik', sans-serif;
   font-weight:450;
 }
 .secondaryText {
   color:white;
   width:15rem;
-  animation:moveButton 300ms;
   font-family:'Rubik', sans-serif;
   font-size:40px;
   font-weight:400;
@@ -86,21 +80,16 @@ body {
   right:7.25rem;
   height:23rem;
   background:#5D8AA8;
-  animation:moveButton 300ms;
 }
 .firstSection, .secondSection, .thirdSection{
   display:flex;
   flex-direction:row;
   justify-content:space-between;
 }
-.firstSection, .thirdSection {
-  height:70vh;
-}
-.secondSection {
+.firstSection, .thirdSection ,.secondSection {
   height:70vh;
 }
 .firstSection {
-
   background:rgba(56,119,161,1);
 }
 .secondSection{
@@ -120,7 +109,6 @@ body {
   top:4rem;
   left:6rem;
   height:620px;
-  animation:moveButton 350ms;
   width:620px;
 }
 .aquaConditioner{
@@ -128,7 +116,6 @@ body {
   height:650px;
   position:relative;
   right:3rem;
-  animation:moveButton 350ms;
   top:3rem;
 }
 .aquaSpray {
@@ -136,19 +123,22 @@ body {
   top:7rem;
   left:6rem;
   height:500px;
-  animation:moveButton 350ms;
   width:500px;
 }
-.shampooDescription, .sprayDescription{
+.shampooDescription, .sprayDescription, .conditionerDescription{
   position:relative;
   display:flex;
   flex-direction:column;
-  animation:moveButton 350ms;
   width:50rem;
   top:12rem;
   gap:3rem;
   height:20rem;
+}
+.shampooDescription, .sprayDescription {
   right:10rem;
+}
+.conditionerDescription {
+  left:12rem;
 }
 .secondSection .secondaryText {
   color: rgba(56,119,161,1);
@@ -156,16 +146,8 @@ body {
 .firstSection .secondaryText, .secondSection .secondaryText, .thirdSection .secondaryText {
   width:fit-content;
 }
-.conditionerDescription {
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  animation:moveButton 350ms;
-  width:50rem;
-  top:12rem;
-  height:20rem;
-  gap:3rem;
-  left:12rem;
+.aquaCheckout, .backButton, .shampooDescription, .sprayDescription, .conditionerDescription, .aquaSpray, .aquaConditioner, .aquaShampoo. .breaking-line, .secondaryText, .primaryText, .gliss, .navbar-text, .shampoos {
+  animation:reAppear 350ms;
 }
 footer {
   background:white;
@@ -227,8 +209,21 @@ footer .footerInfoRight a {
   height:fit-content;
   color:rgb(50,94,124);
 }
-
-@keyframes moveButton {
+.backButton {
+  position:absolute;
+  animation:moveButton 400ms;
+  width:10rem;
+  font-family:'Rubik', sans-serif;
+  height:3rem;
+  background-color:rgba(56,119,161,1);
+  color:white;
+  cursor:pointer;
+  border:none;
+  border-radius:6px;
+  top:3rem;
+  left:3rem;
+}
+@keyframes reAppear {
   0% {
       opacity:0.3;
   }
@@ -300,7 +295,7 @@ footer .footerInfoRight a {
     font-size:8px;
   }
   footer .footerInfoRight {
-    font-size:10px;
+    font-size:8px;
   }
   footer .footerInfoLeft {
     left:-3rem;

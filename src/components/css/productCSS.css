@@ -125,7 +125,7 @@ ul li {
 }
 .states {
     width:10rem;
-  }
+}
 @keyframes animate {
     0% {
         opacity:0.3;

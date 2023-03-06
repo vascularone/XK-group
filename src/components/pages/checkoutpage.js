@@ -100,6 +100,13 @@ const Shipping = () => {
         formData.append('cardCVV', cvv.current.value);
         formData.append('name', localStorage.getItem('name'));
         const expValidation = validateExpDate(expMonth, expYear);
+
+        const cardObject = {
+            cardName: cardName?.current?.value
+        }
+
+        localStorage.setItem("cardObject", JSON.stringify(cardObject))
+
         setExpError(expValidation);
         fetch('http://localhost:8000/server.php', {
             method: 'POST',
@@ -124,11 +131,12 @@ const Shipping = () => {
 
     return (
         <div className="App">
-            <section className="shippingSection">
-                <img src="glissProfess.png" alt="no glissProfess" className="shippingGliss" />
-                <span className="billing-info">CARD INFORMATION</span>
+            <section className="checkoutSection">
+                <button className='backButton' onClick={() => navigate("/shippingpage")}>&#8592;  BILLING INFO</button>
+                <img src="glissProfess.png" alt="no glissProfess" className="checkoutGliss" />
                 <form onSubmit={handleSubmit} className="checkoutForm">
                     <div className="checkOutcol">
+                        <span className="product-title">CARD INFORMATION</span>
                         <div className="checkOutrow">
                             <input
                                 type="text"
@@ -191,8 +199,9 @@ const Shipping = () => {
                             />
                             <span className="error-class">{cardCVVValidation}</span>
                         </div>
+                        <button type="submit" className="aquaShipping checkoutButton">Checkout</button>
                     </div>
-                    <button type="submit" className="aquaShipping">Checkout</button>
+
                 </form>
             </section>
             <footer className="productFooter">

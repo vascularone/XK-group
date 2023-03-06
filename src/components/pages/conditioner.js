@@ -6,7 +6,9 @@ const Conditioner = () => {
     const [toggle, setToggle] = useState(false);
     const [toggle2, setToggle2] = useState(true);
     const handleClick = () => {
-        localStorage.setItem("price", 600);
+        localStorage.setItem("price", 8);
+        localStorage.setItem("item-name", "Aqua Revive Conditioner");
+        localStorage.setItem("item-id", 55155155);
         navigate("/shippingpage");
     }
     return (

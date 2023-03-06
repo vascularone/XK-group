@@ -2,19 +2,19 @@ import { useState } from "react";
 import "../css/productCSS.css";
 import { useNavigate } from 'react-router-dom';
 const Shampoo = () => {
-    localStorage.setItem("price", 500);
     const navigate = useNavigate();
     const [toggle, setToggle] = useState(false);
     const [toggle2, setToggle2] = useState(true);
-    const handleClick = () => {
-        navigate("/shippingpage");
+    const handleClick = (e) => {
+        localStorage.setItem("price", 5);
+        localStorage.setItem("item-name", "Aqua Revive Shampoo");
+        localStorage.setItem("item-id", 44155144);
+        navigate('/shippingpage');
     }
     return (
         <div>
-            {/* <header className="shampooHeader" /> */}
             <section className="shampooSection">
                 <div className="shampooDetails">
-                    {/* <img src="aquaSplash3.png" alt="noaquaSplash" className="hiddenShampoo" /> */}
                     <span className="shampooTitle">Aqua Revive Shampoo</span>
                     <span className="shampooDescription2">The <strong className="glissAqua">Schwarzkopf Gliss Aqua Revive Shampoo</strong> will moisturize and visibly improve the quality of your hair, without weighing it down!</span>
                     <ul>

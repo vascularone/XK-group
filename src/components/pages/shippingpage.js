@@ -156,8 +156,8 @@ const Shipping = () => {
                             </select>
                         </div>
 
+                        <button type="submit" className="aquaShipping">Submit</button>
                     </div>
-                    <button type="submit" className="aquaShipping">Submit</button>
                 </form>
             </section>
             <footer className="productFooter">

@@ -4,7 +4,9 @@ import "../css/productCSS.css";
 const Spray = () => {
     const navigate = useNavigate();
     const handleClick = () => {
-        localStorage.setItem("price", 400);
+        localStorage.setItem("price", 4);
+        localStorage.setItem("item-name", "Aqua Revive Express");
+        localStorage.setItem("item-id", 66155166);
         navigate("/shippingpage");
     }
     const [toggle, setToggle] = useState(false);

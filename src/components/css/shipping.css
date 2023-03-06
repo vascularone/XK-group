@@ -1,7 +1,3 @@
-header {
-  height:10vh;
-  background: rgba(56,119,161,1);
-}
 .shippingSection {
     height:83.3vh;
     background: white;
@@ -38,16 +34,16 @@ header {
     flex-direction:column;
     gap:2.5rem;
   }
-  form .adress {
+  .shippingForm .adress {
     width:29rem;
   }
-  form .zip {
+  .shippingForm .zip {
     width:7rem;
   }
   .billing-info {
       position:relative;
       bottom:4rem;
-      font-size:60px;
+      font-size:100px;
       font-family:'Rubik', sans-serif;
       width:fit-content;
       color:transparent;
@@ -57,7 +53,7 @@ header {
  }
  .aquaShipping {
   position:relative;
-  top:2.5rem;
+  top:0rem;
   background:rgba(56,119,161,0.8);
   font-size:20px;
   cursor:pointer;
@@ -66,11 +62,53 @@ header {
   color:white;
   transition:all 0.5s;
   animation:moveButton 400ms;
-  width:20rem;
+  /* width:20rem; */
 }
 .shippingGliss {
   width:350px;
   height:175px;
   position:relative;
   bottom:5rem;
+}
+
+@media (max-width: 1150px)
+{
+  .billing-info {
+    font-size:70px;
+  }
+}
+@media (max-width:850px)
+{
+  .row {
+    flex-direction:column;
+  }
+  .shippingSection {
+    height:110vh;
+  }
+  .billing-info {
+    font-size:50px;
+  }
+  .shippingGliss {
+    width:300px;
+    height:150px;
+    bottom:3rem;
+  }
+  .shippingForm .adress {
+    width:25rem;
+  }
+}
+@media(max-width:424px)
+{
+  .shippingForm input, .shippingForm .adress {
+    width:15rem;
+    font-size:15px;
+  }
+  .billing-info {
+    font-size:35px;
+    bottom:2rem;
+  }
+  .shippingGliss {
+    width:250px;
+    height:125px;
+  }
 }

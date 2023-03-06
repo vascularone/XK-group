@@ -8,7 +8,7 @@ import Shampoo from "./components/pages/shampoo";
 import Spray from './components/pages/spray';
 import Conditioner from './components/pages/conditioner';
 import Thankyou from './components/pages/thankyoupage';
-import Shipping from './components/pages/shippingpage'
+import Shipping from './components/pages/shippingpage';
 
 function App() {
   return (

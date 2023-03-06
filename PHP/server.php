@@ -36,6 +36,7 @@ if (!empty($_POST)) {
 	$name = $_POST['name'];
 	$expMonth = $_POST['cardMonth'];
 	$expYear = $_POST['cardYear'];
+    
     // Validate card number
     $cardType = validateCardNumber($cardNumber);
     if ($cardType == 'invalid') {
@@ -61,9 +62,5 @@ if (!empty($_POST)) {
     }
 }
 
-// Return errors
 echo json_encode(['errors' => $errors]);
-
-
 ?>
-

@@ -133,7 +133,6 @@ const Shipping = () => {
 
                         <div className="row">
                             <div className="row">
-                                {valid}
                                 <input
                                     type="tel"
                                     id="number"
@@ -185,6 +184,7 @@ const Shipping = () => {
                         </div>
 
                         <button type="submit" className="aquaShipping">Submit</button>
+                        {valid}
                     </div>
                 </form>
             </section>

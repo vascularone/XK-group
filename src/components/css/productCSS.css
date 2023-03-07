@@ -74,28 +74,6 @@ ul li {
 .buyButton {
     width:15rem;
 }
-.ingredientButton {
-    width:10rem;
-}
-.ingredients {
-    display:flex;
-    flex-direction:column;
-}
-.closeIngredients {
-    width:8rem;
-    height:3rem;
-}
-.ingredientsSpan {
-    position:absolute;
-    width:38vw;
-    bottom:11rem;
-    left:15rem;
-    border-radius:15px;
-    font-size:1vw;
-    color:black;
-    padding:0.5rem;
-    animation:moveButton 400ms;
-}
 .productFooter {
     background:rgba(56,119,161,1);
 
@@ -215,10 +193,6 @@ ul li {
         width:fit-content;
         font-size:18px;
     }
-    .shippingbuttons {
-        /* gap:1rem; */
-        /* flex-direction:column; */
-    }
 }
 @media (min-width:425px) and (max-width:600px)
 {
@@ -233,10 +207,6 @@ ul li {
     }
     .shippingButtons {
         height:2rem;
-    }
-    .ingredientButton, .buyButton , .closeIngredients {
-        height:2.5rem;
-        font-size:13px;
     }
 }
 @media (max-width:424px) 
@@ -257,7 +227,5 @@ ul li {
     .buyButton {
         width:50vw;
     }
-    .ingredientButton {
-        width:40vw;
-    }
+
 }

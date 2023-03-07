@@ -25,9 +25,6 @@ const Shampoo = () => {
                     </ul>
                     <div className="shippingbuttons">
                         <button className="buyButton" onClick={handleClick}>Buy Aqua Revive Shampoo</button>
-                        {toggle2 && (<button className="ingredientButton" onClick={() => { setToggle(!toggle); setToggle2(!toggle2); }}>
-                            <span>Ingredients</span>
-                        </button>)}
                         {toggle && (<div className="ingredients">
                             <button className="closeIngredients" onClick={() => { setToggle2(!toggle2); setToggle(!toggle) }}>Close</button>
                             <span className="ingredientsSpan">Aqua (Water, Eau) · Cetearyl Alcohol · Quaternium-87 · Stearamidopropyl Dimethylamine · Citric Acid · Glycerin  · Benzyl Alcohol · Parfum (Fragrance)</span>

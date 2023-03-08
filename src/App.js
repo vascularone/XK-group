@@ -15,6 +15,7 @@ function App() {
     <Router>
       {/* <Navbar /> */}
       <Routes>
+        {/* default route "/" */}
         <Route exaxt path='/' element={<Landing />} />
         <Route path='/shampoo' element={<Shampoo />} />
         <Route path='/conditioner' element={<Conditioner />} />

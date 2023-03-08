@@ -13,6 +13,7 @@ const Checkout = () => {
     const [expMonth, setExpMonth] = useState('');
     const [expYear, setExpYear] = useState('');
     const [expError, setExpError] = useState('');
+    // available months
     const months = [
         "01",
         "02",
@@ -27,11 +28,13 @@ const Checkout = () => {
         "11",
         "12"
     ];
+    //get +15 years for expyear
     const years = [];
     const currentYear = new Date().getFullYear();
     for (let i = 0; i <= 15; i++) {
         years.push(currentYear + i);
     }
+    //validate card number to have space after 4 digits, don't allow nondigits
     function formatCardNumber(value) {
         const cleanValue = value.replace(/\D/g, '');
         const truncatedValue = cleanValue.substring(0, 16);
@@ -39,6 +42,7 @@ const Checkout = () => {
         const formattedValue = match ? match.slice(1).filter(Boolean).join(' ') : '';
         return formattedValue;
     }
+    //validate cardnumber, replace the spaces, check if its valid
     const putCardNumber = (e) => {
         const formatted = formatCardNumber(e.target.value);
         e.target.value = formatted;
@@ -47,6 +51,7 @@ const Checkout = () => {
         setCardNumberValidation(validation);
     }
 
+    //limit cvv to only 4 numbers
     const handleCVVChange = (event) => {
         const inputValue = event.target.value;
         const numericValue = inputValue.replace(/\D/g, "");
@@ -57,16 +62,17 @@ const Checkout = () => {
         setCardCVVValidation(validation);
     };
 
+    //validate expiration month and year
     function validateExpDate(expMonth, expYear) {
         const currentYear = new Date().getFullYear();
         const currentMonth = new Date().getMonth() + 1;
-        if (expMonth > currentMonth || expYear > currentYear) {
+        if ((expMonth > currentMonth && expYear === currentYear) || expYear > currentYear) {
             return '';
         } else {
             return 'Expired';
         }
     }
-
+    //validate card number for visa, amex, master
     function validateCardNumber(cardNumber) {
         const visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
         const mastercardRegEx = /^(?:5[1-5][0-9]{14})$/;
@@ -82,6 +88,7 @@ const Checkout = () => {
             return 'Invalid card number';
         }
     }
+    //validate cvv to be valid only 3 to 4 numbers
     function validateCVV(cvv) {
         const cvvReg = /^[0-9]{3,4}$/;
         if (cvvReg.test(cvv))
@@ -89,10 +96,12 @@ const Checkout = () => {
         else
             return "Invalid CVV";
     }
+    // form fetching
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
+        //store data
         formData.append('cardName', cardName.current.value);
         formData.append('cardNumber', cardNumber.current.value.replace(/\s/g, ''));
         formData.append('cardMonth', selectedMonth.current.value);
@@ -105,10 +114,10 @@ const Checkout = () => {
         formData.append('zip', localStorage.getItem('zip'));
         formData.append('phoneNumber', localStorage.getItem('phoneNumber'));
         formData.append('address', localStorage.getItem('address'));
-
+        //set expiration error
         const expValidation = validateExpDate(expMonth, expYear);
-
         setExpError(expValidation);
+        //fetch to localhost
         fetch('http://localhost:8000/server.php', {
             method: 'POST',
             body: formData
@@ -116,11 +125,13 @@ const Checkout = () => {
             .then(response => response.json())
             .then(data => {
                 if (data.errors) {
+                    //display errors
                     setCardNumberValidation(data.errors.cardNumber || '');
                     setCardCVVValidation(data.errors.cvv || '');
                     setExpError(data.errors.expCard || '');
                 }
                 else {
+                    //go to thankyoupage
                     navigate('/thankyoupage');
                 }
             })
@@ -133,6 +144,7 @@ const Checkout = () => {
     return (
         <div className="App">
             <section className="checkoutSection">
+                {/* go back to shippingpage */}
                 <button className='backButton' onClick={() => navigate("/shippingpage")}>&#8592;  BILLING INFO</button>
                 <img src="glissProfess.png" alt="no glissProfess" className="checkoutGliss" />
                 <form onSubmit={handleSubmit} className="checkoutForm">
@@ -166,6 +178,7 @@ const Checkout = () => {
                                 ref={selectedMonth}
                                 onChange={(e) => setExpMonth(e.target.value)}
                             >
+                                {/* display months */}
                                 {months.map((month) => (
                                     <option key={month} value={month}>
                                         {month}
@@ -181,6 +194,7 @@ const Checkout = () => {
                                 ref={selectedYear}
                                 onChange={(e) => setExpYear(e.target.value)}
                             >
+                                {/* display years */}
                                 {years.map((year) => (
                                     <option key={year} value={year}>
                                         {year}

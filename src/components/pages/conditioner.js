@@ -1,11 +1,9 @@
-import { useState } from "react";
 import "../css/productCSS.css";
 import { useNavigate } from 'react-router-dom';
 const Conditioner = () => {
     const navigate = useNavigate();
-    const [toggle, setToggle] = useState(false);
-    const [toggle2, setToggle2] = useState(true);
     const handleClick = () => {
+        // store product data into locastorage to use in thankyoupage
         localStorage.setItem("price", 8);
         localStorage.setItem("item-name", "Aqua Revive Conditioner");
         localStorage.setItem("item-id", 55155155);
@@ -25,10 +23,6 @@ const Conditioner = () => {
                     </ul>
                     <div className="shippingbuttons">
                         <button className="buyButton" onClick={handleClick}>Buy Aqua Revive Conditioner</button>
-                        {toggle && (<div className="ingredients">
-                            <button className="closeIngredients" onClick={() => { setToggle2(!toggle2); setToggle(!toggle) }}>Close</button>
-                            <span className="ingredientsSpan">Aqua (Water, Eau) · Cetearyl Alcohol · Quaternium-87 · Stearamidopropyl Dimethylamine · Dimethicone · Distearoylethyl Hydroxyethylmonium Methosulfate · Citric Acid · Glycerin · Dicaprylyl Carbonate · Sodium Benzoate · Dimethiconol · Potassium Sorbate · Polyquaternium-37 · Benzyl Alcohol · Parfum (Fragrance)</span>
-                        </div>)}
                     </div>
                 </div>
                 <img src="conditionerSplash3.png" alt="noaquaSplash" className="shampooProduct conditionerProduct" />

@@ -12,6 +12,7 @@ const Shipping = () => {
     const city = useRef(null);
     const address = useRef(null);
     const [valid, setValid] = useState(false);
+    // validate phone number
     function validatePhoneNumber(number) {
         // Regular expression to match US phone numbers
         const phoneRegex = /^\+?1?\-?\(?\d{3}\)?[\- ]?\d{3}[\- ]?\d{4}$/;
@@ -22,6 +23,8 @@ const Shipping = () => {
 
         return "Not valid";
     }
+    //format the phone number, starts with 1 add the +
+    // doesnt start with 1 add braces to the first three
     const handlePhoneChange = (event) => {
         const inputValue = event.target.value;
         let numericValue = inputValue.replace(/\D/g, "");
@@ -88,8 +91,10 @@ const Shipping = () => {
         'Wisconsin',
         'Wyoming',
     ];
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        //store items into localStorage
         localStorage.setItem("name", name.current.value);
         localStorage.setItem("email", email.current.value);
         localStorage.setItem("zip", zip.current.value);
@@ -175,6 +180,7 @@ const Shipping = () => {
                                 className="states"
                                 ref={state}
                             >
+                                {/* display states */}
                                 {usStates.map((states) => (
                                     <option key={states} value={states}>
                                         {states}
@@ -205,7 +211,6 @@ const Shipping = () => {
                 </div>
                 <div className="glissFooter">
                     <span>© Schwarzkopf Gliss Professional</span>
-                    {/* <img src="glissProfess.png" alt="gliss missing"></img> */}
                 </div>
                 <div className="footerInfoRight">
                     <a href="#">PRIVACY POLICY  </a>

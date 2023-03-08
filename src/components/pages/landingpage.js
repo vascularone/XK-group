@@ -4,6 +4,7 @@ import { useElementOnScreen } from '../../utils/ElementOnScreen';
 const Landing = () => {
     const navigate = useNavigate();
 
+    //navigate to pressed product button
     const handleShampooClick = () => {
         navigate("/shampoo");
     }
@@ -16,6 +17,7 @@ const Landing = () => {
     const ref1 = useRef(null);
     const ref2 = useRef(null);
     const ref3 = useRef(null);
+    //disappear and reappear products opacity 0.3 opacity 1
     const onScreen1 = useElementOnScreen(ref1);
     const onScreen2 = useElementOnScreen(ref2);
     const onScreen3 = useElementOnScreen(ref3);
@@ -36,12 +38,14 @@ const Landing = () => {
             <section className="firstSection" >
                 <img src="aquasplash6.png" alt="aqua not responding" className="aquaShampoo" ref={ref1} style={
                     {
+                        // disappear reappear
                         opacity: onScreen1 ? 1 : 0.1,
                         transition: "all 1s"
                     }
                 } />
                 <div className="shampooDescription" ref={ref1} style={
                     {
+                        // disappear reappear
                         opacity: onScreen1 ? 1 : 0.1,
                         transition: "all 1s"
                     }
@@ -55,6 +59,7 @@ const Landing = () => {
             <section className="secondSection" >
                 <div className="conditionerDescription" ref={ref2} style={
                     {
+                        // disappear reappear
                         opacity: onScreen2 ? 1 : 0.1,
                         transition: "all 1s"
                     }
@@ -65,6 +70,7 @@ const Landing = () => {
                 </div>
                 <img src="conditionerSplash3.png" alt="aqua not responding" className="aquaConditioner" ref={ref2} style={
                     {
+                        // disappear reappear
                         opacity: onScreen2 ? 1 : 0.1,
                         transition: "all 1s"
                     }
@@ -74,12 +80,14 @@ const Landing = () => {
             <section className="thirdSection">
                 <img src="aquaSpray.png" alt="aqua not responding" className="aquaSpray" ref={ref3} style={
                     {
+                        // disappear reappear
                         opacity: onScreen3 ? 1 : 0.1,
                         transition: "all 1s"
                     }
                 } />
                 <div className="sprayDescription" ref={ref3} style={
                     {
+                        // disappear reappear
                         opacity: onScreen3 ? 1 : 0.1,
                         transition: "all 1s"
                     }
@@ -106,7 +114,6 @@ const Landing = () => {
                 </div>
                 <div className="glissFooter">
                     <span>© Schwarzkopf Gliss Professional</span>
-                    {/* <img src="glissProfess.png" alt="gliss missing"></img> */}
                 </div>
                 <div className="footerInfoRight">
                     <a href="#">PRIVACY POLICY  </a>

@@ -1,17 +1,14 @@
-import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "../css/productCSS.css";
 const Spray = () => {
     const navigate = useNavigate();
     const handleClick = () => {
+        // store product data into locastorage to use in thankyoupage
         localStorage.setItem("price", 4);
         localStorage.setItem("item-name", "Aqua Revive Express");
         localStorage.setItem("item-id", 66155166);
         navigate("/shippingpage");
     }
-    const [toggle, setToggle] = useState(false);
-    const [toggle2, setToggle2] = useState(true);
-
     return (
         <div>
             <section className="shampooSection">
@@ -26,10 +23,6 @@ const Spray = () => {
                     </ul>
                     <div className="shippingbuttons">
                         <button className="buyButton" onClick={handleClick}>Buy Aqua Revive Express</button>
-                        {toggle && (<div className="ingredients">
-                            <button className="closeIngredients" onClick={() => { setToggle2(!toggle2); setToggle(!toggle) }}>Close</button>
-                            <span className="ingredientsSpan">Aqua (Water, Eau) · Cetearyl Alcohol · Quaternium-87 · Stearamidopropyl Dimethylamine · Dimethicone · Distearoylethyl Hydroxyethylmonium Methosulfate · Citric Acid · Glycerin · Dicaprylyl Carbonate · Sodium Benzoate · Dimethiconol · Potassium Sorbate · Polyquaternium-37 · Benzyl Alcohol · Parfum (Fragrance)</span>
-                        </div>)}
                     </div>
                 </div>
                 <img src="aquaSpray.png" alt="noaquaSplash" className="shampooProduct" />
@@ -51,30 +44,12 @@ const Spray = () => {
                 </div>
                 <div className="glissFooter">
                     <span>© Schwarzkopf Gliss Professional</span>
-                    {/* <img src="glissProfess.png" alt="gliss missing"></img> */}
                 </div>
                 <div className="footerInfoRight">
                     <a href="#">PRIVACY POLICY  </a>
                     <a href="#"> TERMS & CONDITIONS</a>
                 </div>
             </footer>
-            {/* <form
-                action="http://localhost:8000/server.php"
-                method="post"
-                onSubmit={(event) => handleSumbit(event)}
-            >
-                <label htmlFor="name">Name: </label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={name}
-                    onChange={(event) => handleChange(event)}
-                />
-                <br />
-                <button type="submit">Submit</button>
-            </form>
-            <h1>{result}</h1> */}
         </div>
     );
 }

@@ -1,4 +1,5 @@
 <?php
+//allow requests
 	header("Access-Control-Allow-Origin: http://localhost:3000");
 
 	header("Access-Control-Allow-Headers: Content-Type");
@@ -22,7 +23,8 @@
 	        return 'invalid';
 	    }
 	}
-}
+} 
+    //  validate expiration month and year
 if (!function_exists('validateExpDate')) {
 	function validateExpDate($expMonth, $expYear) {
 		$currentYear = date('Y');
@@ -61,6 +63,7 @@ if (!function_exists('validateExpDate')) {
 	    if (!preg_match('/^[0-9]{3,4}$/', $cvv)) {
 	        $errors['cvv'] = 'Invalid CVV';
 	    }
+		//validate exp month and year
 		$expCard = validateExpDate($expMonth, $expYear);
 		if ($expCard == true)
 		{
